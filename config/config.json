@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "ciaracloud",
+    "password": null,
+    "database": "database_development",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "ciaracloud",
+    "password": null,
+    "database": "database_test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "ciaracloud",
+    "password": null,
+    "database": "database_production",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
