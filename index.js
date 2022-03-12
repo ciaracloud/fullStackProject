@@ -10,8 +10,10 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const imp_api_key = process.env.IMP_API_KEY;
+const yel_api_key = process.env.YEL_API_KEY;
+const sg_api_key = process.env.SG_API_KEY;
 
-app.get("/test_api", async (req, res) => {
+app.get("/get_data", async (req, res) => {
   const getHotelData = async () => {
     let url = `https://api.impala.travel/v1/hotels?end=2022-07-05&latitude=40.7128&longitude=-74.0060&radius=5000&sortBy=distance_m:desc&start=2022-07-01`;
     let hotels = await fetch(url, {
@@ -24,9 +26,33 @@ app.get("/test_api", async (req, res) => {
     let hotelJson = await hotels.json();
     return hotelJson;
   };
+  const getEventsData = async () => {
+    let url = `https://api.seatgeek.com/2/events?client_id=${sg_api_key}&lat=25.7617&lon=-80.1918&datetime_utc=2022-03-20`;
+    let events = await fetch(url);
+    let eventsJson = await events.json();
+    return eventsJson;
+  };
+  const eventsData = await getEventsData();
   const hotelData = await getHotelData();
-  console.log(hotelData);
-  res.send(hotelData);
+  res.send(eventsData);
+  console.log("this is hotel data:", hotelData);
+  console.log("this is events data:", eventsData);
 });
 
 app.listen(PORT, console.log(`listening on http://localhost${PORT}`));
+
+// const getYelpData = async () => {
+//   let url = `https://api.yelp.com/v3/businesses/search?location="Houston"`;
+//   let yelpInfo = await fetch(url, {
+//     // need to add api key - and adjust headers
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "x-api-key": `${yel_api_key}`, // wrong api key here
+//     },
+//   });
+//   let yelpJson = await yelpInfo.json();
+//   return yelpJson;
+// };
+
+// const yelpData = await getYelpData();
