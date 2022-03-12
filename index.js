@@ -17,7 +17,6 @@ app.get("/get_data", async (req, res) => {
   const getHotelData = async () => {
     let url = `https://api.impala.travel/v1/hotels?end=2022-07-05&latitude=40.7128&longitude=-74.0060&radius=5000&sortBy=distance_m:desc&start=2022-07-01`;
     let hotels = await fetch(url, {
-      method: "GET",
       headers: {
         "Content-Type": "application/json",
         "x-api-key": `${imp_api_key}`,

@@ -2,21 +2,21 @@
   "development": {
     "username": "ciaracloud",
     "password": null,
-    "database": "database_development",
+    "database": "VacationDB",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
     "username": "ciaracloud",
     "password": null,
-    "database": "database_test",
+    "database": "VacationDB_test",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "ciaracloud",
     "password": null,
-    "database": "database_production",
+    "database": "VacationDB_production",
     "host": "localhost",
     "dialect": "postgres"
   }
