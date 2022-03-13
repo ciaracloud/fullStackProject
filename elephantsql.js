@@ -12,7 +12,7 @@ client.connect((err) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows[0].theTime);
+    console.log("connected to database");
     // >> output: 2018-08-23T14:02:57.117Z
     client.end();
   });
