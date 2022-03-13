@@ -55,4 +55,6 @@ app.get("/get_yelp/", async (req, res) => {
   console.log("This is Yelp Data", yelpData);
 });
 
+console.log("i am adding this to test if you can pull");
+
 app.listen(PORT, console.log(`listening on http://localhost${PORT}`));
