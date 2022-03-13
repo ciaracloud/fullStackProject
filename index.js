@@ -62,7 +62,7 @@ app.get("/get_excursions", async (req, res) => {
 
 app.get("/get_restaurants", async (req, res) => {
   const getRestaurants = async () => {
-    let url = `https://api.yelp.com/v3/businesses/search?location="Houston"&term="restaurant"`;
+    let url = `https://api.yelp.com/v3/businesses/search?location="tokyo"&term="restaurant"`;
     let restaurantInfo = await fetch(url, {
       method: "get",
       headers: {
