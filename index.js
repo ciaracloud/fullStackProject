@@ -87,7 +87,8 @@ app.get("/home", (req, res) => {
 
 app.get("/db", async (req, res) => {
   let vacationsData = await db.Vacations.findAll();
-  res.send(vacationsData);
+  console.log(vacationsData);
+  res.send(vacationsData[0]["dataValues"]["firstName"]);
 });
 
 app.listen(PORT, console.log(`LISTENING on http://localhost${PORT}`));
