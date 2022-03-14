@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "ciaracloud",
-    "password": null,
-    "database": "VacationDB",
-    "host": "localhost",
+    "username": "ixbnmsph",
+    "password": "",
+    "database": "ixbnmsph",
+    "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
   },
   "test": {
-    "username": "ciaracloud",
-    "password": null,
-    "database": "VacationDB_test",
-    "host": "localhost",
+    "username": "ixbnmsph",
+    "password": "",
+    "database": "ixbnmsph",
+    "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
   },
   "production": {
-    "username": "ciaracloud",
-    "password": null,
-    "database": "VacationDB_production",
-    "host": "localhost",
+    "username": "ixbnmsph",
+    "password": "",
+    "database": "ixbnmsph",
+    "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
   }
 }
