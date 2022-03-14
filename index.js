@@ -84,4 +84,10 @@ app.get("/get_restaurants", async (req, res) => {
 app.get("/home", (req, res) => {
   res.render("pages/home"); //only use this when you are trying to render a page or make them go to a page
 });
+
+app.get("/db", async (req, res) => {
+  let vacationsData = await db.Vacations.findAll();
+  res.send(vacationsData);
+});
+
 app.listen(PORT, console.log(`LISTENING on http://localhost${PORT}`));
