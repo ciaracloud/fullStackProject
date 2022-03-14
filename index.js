@@ -8,6 +8,9 @@ require("dotenv").config();
 const client = require("./elephantsql");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(express.static("./public"));
 
 const imp_api_key = process.env.IMP_API_KEY;
 const yel_api_key = process.env.YEL_API_KEY;
@@ -77,4 +80,7 @@ app.get("/get_restaurants", async (req, res) => {
   console.log("This is restaurant data:", restaurantData);
 });
 
-app.listen(PORT, console.log(`listening on http://localhost${PORT}`));
+app.get("/home", (req, res) => {
+  res.render("pages/home"); //only use this when you are trying to render a page or make them go to a page
+});
+app.listen(PORT, console.log(`LISTENING on http://localhost${PORT}`));
