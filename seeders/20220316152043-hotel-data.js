@@ -4,21 +4,24 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return await queryInterface.bulkInsert("Hotels", [
       {
-        name: "Hotel",
-        description: "Great, fun hotel",
-        starRating: "4",
-        phoneNumber: "123",
-        email: "123@13",
-        amenities: "fhsfjdhfkas",
-        hotelImageUrl: "gsjdhsdjasd",
-        room1ImageUrl: "dhgfmdfjgsdfj",
-        rooom2ImageUrl: "dhgfjsgdfjgds",
-        address: "dgfjdfdf",
-        vacationId: 1,
+        firstName: "Kiwi",
+        lastName: "Mango",
+        startDate: "2022/09/01",
+        endDate: "2022/09/04",
+        city: "Dallas",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
     ]);
+    /**
+     * Add seed commands here.
+     *
+     * Example:
+     * await queryInterface.bulkInsert('People', [{
+     *   name: 'John Doe',
+     *   isBetaMember: false
+     * }], {});
+     */
   },
 
   async down(queryInterface, Sequelize) {
