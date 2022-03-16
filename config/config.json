@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "ixbnmsph",
-    "password": "kfKIhGL8v5l0znOpwIb1MmbWpkjX6PCS",
+    "password": "",
     "database": "ixbnmsph",
     "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
   },
   "test": {
     "username": "ixbnmsph",
-    "password": "kfKIhGL8v5l0znOpwIb1MmbWpkjX6PCS",
+    "password": "",
     "database": "ixbnmsph",
     "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
   },
   "production": {
     "username": "ixbnmsph",
-    "password": "kfKIhGL8v5l0znOpwIb1MmbWpkjX6PCS",
+    "password": "",
     "database": "ixbnmsph",
     "host": "otto.db.elephantsql.com",
     "dialect": "postgres"
