@@ -20,12 +20,10 @@ app.set("views", "views");
 app.set("view engine", "html");
 
 // routes
-const vacations = require("./routes/vacations");
-const hotels = require("./routes/hotels");
+const routes = require("./routes/routes");
 
 // routes connections
-app.use("", vacations);
-app.use("", hotels);
+app.use("", routes);
 
 // env passwords
 const yel_api_key = process.env.YEL_API_KEY;

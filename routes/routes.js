@@ -19,8 +19,7 @@ app.set("view engine", "html");
 router.get("/home", async (req, res) => {
   let vacationsData = await db.Vacations.findAll();
   const data = vacationsData;
-  // this route will create asomething in your database
-  res.render("home.html", { locals: { data: data } }); //only use this when you are trying to render a page or make them go to a page
+  res.render("home.html", { locals: { data: data } });
 });
 
 router.post("/create_vacation", async (req, res) => {
@@ -42,7 +41,7 @@ router.post("/create_vacation", async (req, res) => {
   }
 });
 
-router.post("/get_hotels", async (req, res) => {
+router.post("/get_restaurants", async (req, res) => {
   const { yel_api_key, url } = req.body;
   console.log(req.body);
   let restaurantInfo = await fetch(url, {
@@ -54,6 +53,10 @@ router.post("/get_hotels", async (req, res) => {
   let restaurantJson = await restaurantInfo.json();
   // console.log(restaurantJson?.businesses);
   res.status(200).send(restaurantJson?.businesses);
+});
+
+router.get("/hotels", (req, res) => {
+  res.render("hotels.html");
 });
 
 module.exports = router;

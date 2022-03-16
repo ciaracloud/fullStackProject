@@ -64,18 +64,19 @@
 //   };
 // };
 
-const yel_api_key = process.env.YEL_API_KEY;
-const sg_api_key = process.env.SG_API_KEY;
+const yel_api_key =
+  "zAoA5NgLXskeGgOla0Y3d5P8ZvfOAZiNw8JdBWuYR4FzjqajphGIPIBeFkClunh2cVDENilhN7cCp2UrksNjRpQnSfzSlzXgDR9380IQqcXEsxie-WD0O_jltoEqYnYx";
+const sg_api_key = "MjYwNTAxNDF8MTY0Njk1NTQ2NC45MTIzNjQ3";
 
 const searchButton = document.querySelector(".searchButton");
 const getRestaurantsData = async (city, vacationId) => {
   const restaurantObject = {
     city: city,
     url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="restaurant"&limit=3`,
-    yel_api_key: yel_api_key,
+    yel_api_key: `${yel_api_key}`,
   };
   console.log(restaurantObject);
-  let restaurantInfo = await fetch("http://localhost:3000/get_hotels", {
+  let restaurantInfo = await fetch("http://localhost:3000/get_restaurants", {
     method: "POST",
     mode: "cors",
     cache: "no-cache",
@@ -91,13 +92,39 @@ const getRestaurantsData = async (city, vacationId) => {
   const restaurantsContainer = document.querySelector(".restaurants");
   for (const restaurant of restaurantsJson) {
     const restName = document.createElement("p");
-    const restImg = document.createElement("img");
     restName.innerText = restaurant.name;
+    restName.className = "restName";
+    const restImg = document.createElement("img");
     restImg.src = restaurant.image_url;
     restImg.height = "200";
-    restaurantsContainer.append(restImg, restName);
+    restImg.className = "restImg";
+    const restRating = document.createElement("p");
+    restRating.innerText = restaurant.rating;
+    restRating.className = "restRating";
+    const restPrice = document.createElement("p");
+    restPrice.innerText = restaurant.price;
+    restPrice.className = "restPrice";
+    const restAddress = document.createElement("p");
+    restAddress.innerText = restaurant.location.display_address;
+    restAddress.className = "restAddress";
+    const restPhone = document.createElement("p");
+    restPhone.innerText = restaurant.display_phone;
+    restPhone.className = "restPhone";
+    const restAddButton = document.createElement("button");
+    restAddButton.innerText = "Add";
+    restAddButton.className = "restAddButton";
+    restaurantsContainer.append(
+      restName,
+      restImg,
+      restRating,
+      restPrice,
+      restAddress,
+      restPhone,
+      restAddButton
+    );
   }
   console.log(vacationId);
+
   //   const amenitiesArray = [hotelJson.data[0]["address"]["line1"]];
   //   const addressArray = [...hotelJson.data[0]["address"]];
   //   console.log(addressArray);
