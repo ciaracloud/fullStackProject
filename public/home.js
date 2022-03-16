@@ -92,7 +92,6 @@ const getRestaurantsData = async (city, vacationId) => {
     url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="restaurant"&limit=3`,
     yel_api_key: `${yel_api_key}`,
   };
-  console.log(restaurantObject);
   let restaurantInfo = await fetch("http://localhost:3000/get_restaurants", {
     method: "POST",
     mode: "cors",
@@ -134,7 +133,6 @@ const getRestaurantsData = async (city, vacationId) => {
     const restAddButton = document.createElement("button");
     restAddButton.innerText = "Add";
     restAddButton.className = "restAddButton";
-    console.log("this is the img url", restaurant.image_url);
     const addRestToDB = async () => {
       restDiv.remove();
       const restaurantToCreate = {
@@ -146,7 +144,6 @@ const getRestaurantsData = async (city, vacationId) => {
         phoneNumber: restaurant.display_phone,
         vacationId: vacationId.id,
       };
-      console.log(restaurantToCreate);
       const createNewRestaurant = await fetch(
         "http://localhost:3000/create_restaurant",
         {
@@ -191,7 +188,7 @@ const getRestaurantsData = async (city, vacationId) => {
   excursionsButton.innerText = "See excursions";
   excursionsButton.className = "excursionButton";
   restaurantsContainer.append(excursionsButton);
-  const getExcursionsData = () => {
+  const getExcursionsData = async () => {
     const excursionObject = {
       city: city,
       url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="excursions"&limit=3`,
@@ -210,14 +207,90 @@ const getRestaurantsData = async (city, vacationId) => {
       body: JSON.stringify(excursionObject),
     });
     let excursionJson = await excursionInfo.json();
-    const excursionsContainer = document.querySelector(".excursions");
+    const excursionContainer = document.querySelector(".excursions");
     let i = 0;
+    for (const excursion of excursionJson) {
+      i++;
+      const excursionDiv = document.createElement("div");
+      excursionDiv.className = `excursionDiv${i}`;
+      const excursionName = document.createElement("p");
+      excursionName.innerText = excursion.name;
+      excursionName.className = "excursionName";
+      const excursionImg = document.createElement("img");
+      excursionImg.src = excursion.image_url;
+      excursionImg.height = "200";
+      excursionImg.className = "excursionImg";
+      const excursionRating = document.createElement("p");
+      excursionRating.innerText = excursion.rating;
+      excursionRating.className = "excursionRating";
+      const excursionAddress = document.createElement("p");
+      excursionAddress.innerText = excursion.location.display_address;
+      excursionAddress.className = "excursionAddress";
+      const excursionPhone = document.createElement("p");
+      excursionPhone.innerText = excursion.display_phone;
+      excursionPhone.className = "excursionPhone";
+      const excursionAddButton = document.createElement("button");
+      excursionAddButton.innerText = "Add";
+      excursionAddButton.className = "excursionAddButton";
+      console.log("this is the img url", excursion.image_url);
+      const addExcursionToDB = async () => {
+        excursionDiv.remove();
+        const excursionToCreate = {
+          name: excursion.name,
+          imageUrl: excursion.image_url,
+          rating: excursion.rating,
+          address: excursion.location.address1,
+          phoneNumber: excursion.display_phone,
+          vacationId: vacationId.id,
+        };
+        console.log(excursionToCreate);
+        const createNewExcursion = await fetch(
+          "http://localhost:3000/create_excursion",
+          {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify(excursionToCreate),
+          }
+        );
+        if (createNewExcursion.status === 200) {
+        } else {
+          window.alert("Bruh, you messed up somewhere");
+        }
+      };
+
+      excursionAddButton.addEventListener("click", async () => {
+        addExcursionToDB();
+      });
+      excursionDiv.append(
+        excursionName,
+        excursionImg,
+        excursionRating,
+        excursionAddress,
+        excursionPhone,
+        excursionAddButton
+      );
+      excursionContainer.append(excursionDiv);
+    }
+    const eventsButton = document.createElement("button");
+    eventsButton.innerText = "See events";
+    eventsButton.className = "eventsButton";
+    excursionContainer.append(eventsButton);
+
+    eventsButton.addEventListener("click", () => {
+      excursionContainer.remove();
+    });
   };
   excursionsButton.addEventListener("click", () => {
     restaurantsContainer.remove();
+    getExcursionsData();
   });
-
-  console.log("this is the vaction id", vacationId.id);
 };
 
 const submitButton = document.querySelector(".submitButton");
