@@ -63,11 +63,64 @@
 //     vacationId: "",
 //   };
 // };
+
+const yel_api_key = process.env.YEL_API_KEY;
+const sg_api_key = process.env.SG_API_KEY;
+
+const searchButton = document.querySelector(".searchButton");
+const getRestaurantsData = async (city, vacationId) => {
+  const restaurantObject = {
+    city: city,
+    url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="restaurant"&limit=3`,
+    yel_api_key: yel_api_key,
+  };
+  console.log(restaurantObject);
+  let restaurantInfo = await fetch("http://localhost:3000/get_hotels", {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(restaurantObject),
+  });
+  let restaurantsJson = await restaurantInfo.json();
+  const restaurantsContainer = document.querySelector(".restaurants");
+  for (const restaurant of restaurantsJson) {
+    const restName = document.createElement("p");
+    const restImg = document.createElement("img");
+    restName.innerText = restaurant.name;
+    restImg.src = restaurant.image_url;
+    restImg.height = "200";
+    restaurantsContainer.append(restImg, restName);
+  }
+  console.log(vacationId);
+  //   const amenitiesArray = [hotelJson.data[0]["address"]["line1"]];
+  //   const addressArray = [...hotelJson.data[0]["address"]];
+  //   console.log(addressArray);
+  //   const hotelDataObject = {
+  //     name: hotelJson.data[0]["name"],
+  //     description: hotelJson.data[0]["description"]["short"],
+  //     starRating: hotelJson.data[0]["starRating"],
+  //     phoneNumber: hotelJson.data[0]["phoneNumbers"],
+  //     email: hotelJson.data[0]["emails"],
+  //     amenities: hotelJson.data[0]["name"],
+  //     hotelImageUrl: hotelJson.data[0]["images"][0]["url"],
+  //     room1ImageUrl: hotelJson.data[0]["images"],
+  //     rooom2ImageUrl: hotelJson.data[0]["images"],
+  //     address: addressArray,
+  //     vacationId: vacationId,
+  //   };
+};
 // const hotelData = await getHotelData();
 
 const submitButton = document.querySelector(".submitButton");
 
 const createVacation = async () => {
+  console.log("hi");
   const inputFirstName = document.querySelector(".firstNameInput").value;
   const inputLastName = document.querySelector(".lastNameInput").value;
   const inputStartDate = document.querySelector(".startDateInput").value;
@@ -97,14 +150,19 @@ const createVacation = async () => {
       body: JSON.stringify(vacationToCreate),
     }
   );
-  console.log(createNewVacation);
+  const responseFromVacay = await createNewVacation.json();
+  console.log(responseFromVacay);
+  getRestaurantsData(inputCity, responseFromVacay);
   if (createNewVacation.status === 200) {
-    window.location.assign("/hotels");
+    // window.location.assign("/hotels");
   } else {
     window.alert("Bruh, you messed up somewhere");
   }
 };
 
-submitButton.addEventListener("click", () => {
+searchButton.addEventListener("click", () => {
   createVacation();
 });
+// searchButton.addEventListener("click", () => {
+//   getHotelData();
+// });
