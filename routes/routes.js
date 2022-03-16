@@ -41,6 +41,26 @@ router.post("/create_vacation", async (req, res) => {
   }
 });
 
+router.post("/create_restaurant", async (req, res) => {
+  const { name, imageUrl, rating, price, address, phoneNumber, vacationId } =
+    req.body;
+  const newRestaurant = {
+    name: name,
+    imageUrl: imageUrl,
+    rating: rating,
+    price: price,
+    address: address,
+    phoneNumber: phoneNumber,
+    vacationId: vacationId,
+  };
+  const addRestaurant = await db.Restaurants.create(newRestaurant);
+  if (addRestaurant) {
+    res.status(200).send(addRestaurant);
+  } else {
+    res.status(400).send(addRestaurant);
+  }
+});
+
 router.post("/get_restaurants", async (req, res) => {
   const { yel_api_key, url } = req.body;
   console.log(req.body);
@@ -53,6 +73,20 @@ router.post("/get_restaurants", async (req, res) => {
   let restaurantJson = await restaurantInfo.json();
   // console.log(restaurantJson?.businesses);
   res.status(200).send(restaurantJson?.businesses);
+});
+
+router.post("/get_excursions", async (req, res) => {
+  const { yel_api_key, url } = req.body;
+  console.log(req.body);
+  let excursionInfo = await fetch(url, {
+    method: "get",
+    headers: {
+      Authorization: `Bearer ${yel_api_key}`,
+    },
+  });
+  let excursionJson = await excursionInfo.json();
+  // console.log(restaurantJson?.businesses);
+  res.status(200).send(excursionJson?.businesses);
 });
 
 router.get("/hotels", (req, res) => {

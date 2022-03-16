@@ -64,9 +64,26 @@
 //   };
 // };
 
-const yel_api_key =
-  "zAoA5NgLXskeGgOla0Y3d5P8ZvfOAZiNw8JdBWuYR4FzjqajphGIPIBeFkClunh2cVDENilhN7cCp2UrksNjRpQnSfzSlzXgDR9380IQqcXEsxie-WD0O_jltoEqYnYx";
-const sg_api_key = "MjYwNTAxNDF8MTY0Njk1NTQ2NC45MTIzNjQ3";
+// ****** HOTEL DATA ******
+//   const amenitiesArray = [hotelJson.data[0]["address"]["line1"]];
+//   const addressArray = [...hotelJson.data[0]["address"]];
+//   console.log(addressArray);
+//   const hotelDataObject = {
+//     name: hotelJson.data[0]["name"],
+//     description: hotelJson.data[0]["description"]["short"],
+//     starRating: hotelJson.data[0]["starRating"],
+//     phoneNumber: hotelJson.data[0]["phoneNumbers"],
+//     email: hotelJson.data[0]["emails"],
+//     amenities: hotelJson.data[0]["name"],
+//     hotelImageUrl: hotelJson.data[0]["images"][0]["url"],
+//     room1ImageUrl: hotelJson.data[0]["images"],
+//     rooom2ImageUrl: hotelJson.data[0]["images"],
+//     address: addressArray,
+//     vacationId: vacationId,
+//   };
+
+const yel_api_key = "";
+const sg_api_key = "";
 
 const searchButton = document.querySelector(".searchButton");
 const getRestaurantsData = async (city, vacationId) => {
@@ -90,7 +107,11 @@ const getRestaurantsData = async (city, vacationId) => {
   });
   let restaurantsJson = await restaurantInfo.json();
   const restaurantsContainer = document.querySelector(".restaurants");
+  let i = 0;
   for (const restaurant of restaurantsJson) {
+    i++;
+    const restDiv = document.createElement("div");
+    restDiv.className = `restDiv${i}`;
     const restName = document.createElement("p");
     restName.innerText = restaurant.name;
     restName.className = "restName";
@@ -113,7 +134,49 @@ const getRestaurantsData = async (city, vacationId) => {
     const restAddButton = document.createElement("button");
     restAddButton.innerText = "Add";
     restAddButton.className = "restAddButton";
-    restaurantsContainer.append(
+    console.log("this is the img url", restaurant.image_url);
+    const addRestToDB = async () => {
+      restDiv.remove();
+      const restaurantToCreate = {
+        name: restaurant.name,
+        imageUrl: restaurant.image_url,
+        rating: restaurant.rating,
+        price: restaurant.price,
+        address: restaurant.location.address1,
+        phoneNumber: restaurant.display_phone,
+        vacationId: vacationId.id,
+      };
+      console.log(restaurantToCreate);
+      const createNewRestaurant = await fetch(
+        "http://localhost:3000/create_restaurant",
+        {
+          method: "POST",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+          referrerPolicy: "no-referrer",
+          body: JSON.stringify(restaurantToCreate),
+        }
+      );
+
+      // const responseFromRest = await createNewRestaurant.json();
+      // console.log(responseFromRest);
+      // // getRestaurantsData(inputCity, responseFromRest);
+      if (createNewRestaurant.status === 200) {
+        // window.location.assign("/hotels");
+      } else {
+        window.alert("Bruh, you messed up somewhere");
+      }
+    };
+
+    restAddButton.addEventListener("click", async () => {
+      addRestToDB();
+    });
+    restDiv.append(
       restName,
       restImg,
       restRating,
@@ -122,32 +185,44 @@ const getRestaurantsData = async (city, vacationId) => {
       restPhone,
       restAddButton
     );
+    restaurantsContainer.append(restDiv);
   }
-  console.log(vacationId);
+  const excursionsButton = document.createElement("button");
+  excursionsButton.innerText = "See excursions";
+  excursionsButton.className = "excursionButton";
+  restaurantsContainer.append(excursionsButton);
+  const getExcursionsData = () => {
+    const excursionObject = {
+      city: city,
+      url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="excursions"&limit=3`,
+      yel_api_key: `${yel_api_key}`,
+    };
+    let excursionInfo = await fetch("http://localhost:3000/get_excursions", {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(excursionObject),
+    });
+    let excursionJson = await excursionInfo.json();
+    const excursionsContainer = document.querySelector(".excursions");
+    let i = 0;
+  };
+  excursionsButton.addEventListener("click", () => {
+    restaurantsContainer.remove();
+  });
 
-  //   const amenitiesArray = [hotelJson.data[0]["address"]["line1"]];
-  //   const addressArray = [...hotelJson.data[0]["address"]];
-  //   console.log(addressArray);
-  //   const hotelDataObject = {
-  //     name: hotelJson.data[0]["name"],
-  //     description: hotelJson.data[0]["description"]["short"],
-  //     starRating: hotelJson.data[0]["starRating"],
-  //     phoneNumber: hotelJson.data[0]["phoneNumbers"],
-  //     email: hotelJson.data[0]["emails"],
-  //     amenities: hotelJson.data[0]["name"],
-  //     hotelImageUrl: hotelJson.data[0]["images"][0]["url"],
-  //     room1ImageUrl: hotelJson.data[0]["images"],
-  //     rooom2ImageUrl: hotelJson.data[0]["images"],
-  //     address: addressArray,
-  //     vacationId: vacationId,
-  //   };
+  console.log("this is the vaction id", vacationId.id);
 };
-// const hotelData = await getHotelData();
 
 const submitButton = document.querySelector(".submitButton");
 
 const createVacation = async () => {
-  console.log("hi");
   const inputFirstName = document.querySelector(".firstNameInput").value;
   const inputLastName = document.querySelector(".lastNameInput").value;
   const inputStartDate = document.querySelector(".startDateInput").value;
@@ -190,6 +265,3 @@ const createVacation = async () => {
 searchButton.addEventListener("click", () => {
   createVacation();
 });
-// searchButton.addEventListener("click", () => {
-//   getHotelData();
-// });
