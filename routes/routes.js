@@ -21,7 +21,7 @@ router.get("/home", async (req, res) => {
   res.render("home.html", { locals: { data: data } });
 });
 
-router.get("/see_vacation", (req, res) => {
+router.get("/check_vacation", (req, res) => {
   res.render("final.html");
 });
 
@@ -153,8 +153,53 @@ router.post("/create_excursion", async (req, res) => {
   }
 });
 
-router.get("/hotels", (req, res) => {
-  res.render("hotels.html");
+// GRAB DATA FROM DB ROUTES
+router.post("/find_vacation", async (req, res) => {
+  const { resId } = req.body;
+  const findVacation = await db.Vacations.findAll({
+    where: { id: resId },
+  });
+  if (findVacation) {
+    res.status(200).send(findVacation);
+  } else {
+    res.status(400).send(findVacation);
+  }
+});
+
+router.post("/find_hotel", async (req, res) => {
+  const { resId } = req.body;
+  const findHotel = await db.Lodgings.findAll({
+    where: { vacationId: resId },
+  });
+  if (findHotel) {
+    res.status(200).send(findHotel);
+  } else {
+    res.status(400).send(findHotel);
+  }
+});
+
+router.post("/find_restaurants", async (req, res) => {
+  const { resId } = req.body;
+  const findRestaurants = await db.Restaurants.findAll({
+    where: { vacationId: resId },
+  });
+  if (findRestaurants) {
+    res.status(200).send(findRestaurants);
+  } else {
+    res.status(400).send(findRestaurants);
+  }
+});
+
+router.post("/find_excursions", async (req, res) => {
+  const { resId } = req.body;
+  const findExcursions = await db.Excursions.findAll({
+    where: { vacationId: resId },
+  });
+  if (findExcursions) {
+    res.status(200).send(findExcursions);
+  } else {
+    res.status(400).send(findExcursions);
+  }
 });
 
 module.exports = router;

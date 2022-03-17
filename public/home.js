@@ -3,6 +3,11 @@ const yel_api_key = "";
 const inputsArray = [];
 
 const searchButton = document.querySelector(".searchButton");
+const checkVacationButton = document.querySelector(".checkVacationButton");
+
+checkVacationButton.addEventListener("click", () => {
+  window.location.assign("/check_vacation");
+});
 
 const getHotelsData = async (city, vacationId) => {
   const formContainer = document.querySelector(".formContainer");
@@ -317,7 +322,7 @@ const getHotelsData = async (city, vacationId) => {
         ".finalPageButtonContainer"
       );
       finalPageButton.addEventListener("click", () => {
-        window.location.assign("/see_vacation");
+        window.location.assign("/check_vacation");
       });
       finalPageButtonContainer.append(finalPageButton);
     };
