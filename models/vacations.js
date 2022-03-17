@@ -18,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       Vacations.hasMany(models.Excursions, {
         foreignKey: "vacationId",
       });
-      Vacations.hasMany(models.Events, {
-        foreignKey: "vacationId",
-      });
     }
   }
   Vacations.init(

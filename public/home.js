@@ -1,8 +1,17 @@
 const yel_api_key = "";
-const sg_api_key = "";
+
+const inputsArray = [];
 
 const searchButton = document.querySelector(".searchButton");
+
 const getHotelsData = async (city, vacationId) => {
+  const formContainer = document.querySelector(".formContainer");
+  formContainer.remove();
+  const welcomeContainer = document.querySelector(".welcomeContainer");
+  const welcomeParagraph = document.createElement("p");
+  welcomeParagraph.className = "welcomeParagraph";
+  welcomeParagraph.innerText = `Welcome ${inputsArray[0]} ${inputsArray[1]}! Let's start planning your trip to ${inputsArray[4]} from ${inputsArray[2]} to ${inputsArray[3]}! Here is your reservation ID: ${vacationId.id}. Make sure to keep track of it in order to look up and make changes to your trip.`;
+  welcomeContainer.append(welcomeParagraph);
   const hotelObject = {
     city: city,
     url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="hotels"&limit=3`,
@@ -22,6 +31,10 @@ const getHotelsData = async (city, vacationId) => {
   });
   let hotelsJson = await hotelInfo.json();
   const hotelsContainer = document.querySelector(".hotels");
+  const hotelsTitle = document.createElement("p");
+  hotelsTitle.className = "hotelsTitle";
+  hotelsTitle.innerText = "Choose a hotel from below:";
+  hotelsContainer.append(hotelsTitle);
   let i = 0;
   for (const hotel of hotelsJson) {
     i++;
@@ -50,7 +63,7 @@ const getHotelsData = async (city, vacationId) => {
     hotelAddButton.innerText = "Add";
     hotelAddButton.className = "hotelAddButton";
     const addHotelToDB = async () => {
-      hotelDiv.remove();
+      hotelsContainer.remove();
       const hotelToCreate = {
         name: hotel.name,
         imageUrl: hotel.image_url,
@@ -99,7 +112,8 @@ const getHotelsData = async (city, vacationId) => {
   const restaurantsButton = document.createElement("button");
   restaurantsButton.innerText = "See restaurants";
   restaurantsButton.className = "restaurantButton";
-  hotelsContainer.append(restaurantsButton);
+  const restButtonContainer = document.querySelector(".restButtonContainer");
+  restButtonContainer.append(restaurantsButton);
   const getRestaurantsData = async () => {
     const restaurantObject = {
       city: city,
@@ -120,6 +134,10 @@ const getHotelsData = async (city, vacationId) => {
     });
     let restaurantJson = await restaurantInfo.json();
     const restaurantContainer = document.querySelector(".restaurants");
+    const restaurantTitle = document.querySelector("p");
+    restaurantTitle.className = "restaurantTitle";
+    restaurantTitle.innerText = "Choose restaurant(s) from below:";
+    restaurantContainer.append(restaurantTitle);
     let i = 0;
     for (const restaurant of restaurantJson) {
       i++;
@@ -215,6 +233,10 @@ const getHotelsData = async (city, vacationId) => {
       });
       let excursionsJson = await excursionInfo.json();
       const excursionsContainer = document.querySelector(".excursions");
+      const excursionTitle = document.createElement("p");
+      excursionTitle.className = "excursionTitle";
+      excursionTitle.innerText = "Choose an excursion(s) from below:";
+      excursionsContainer.append(excursionTitle);
       let i = 0;
       for (const excursion of excursionsJson) {
         i++;
@@ -288,6 +310,16 @@ const getHotelsData = async (city, vacationId) => {
         );
         excursionsContainer.append(excursionDiv);
       }
+      const finalPageButton = document.createElement("button");
+      finalPageButton.className = "finalPageButton";
+      finalPageButton.innerText = "See vacation";
+      const finalPageButtonContainer = document.querySelector(
+        ".finalPageButtonContainer"
+      );
+      finalPageButton.addEventListener("click", () => {
+        window.location.assign("/see_vacation");
+      });
+      finalPageButtonContainer.append(finalPageButton);
     };
     excursionsButton.addEventListener("click", () => {
       restaurantContainer.remove();
@@ -295,12 +327,11 @@ const getHotelsData = async (city, vacationId) => {
     });
   };
   restaurantsButton.addEventListener("click", () => {
+    restButtonContainer.remove();
     hotelsContainer.remove();
     getRestaurantsData();
   });
 };
-
-const submitButton = document.querySelector(".submitButton");
 
 const createVacation = async () => {
   const inputFirstName = document.querySelector(".firstNameInput").value;
@@ -308,6 +339,14 @@ const createVacation = async () => {
   const inputStartDate = document.querySelector(".startDateInput").value;
   const inputEndDate = document.querySelector(".endDateInput").value;
   const inputCity = document.querySelector(".cityInput").value;
+
+  inputsArray.push(
+    inputFirstName,
+    inputLastName,
+    inputStartDate,
+    inputEndDate,
+    inputCity
+  );
 
   const vacationToCreate = {
     firstName: inputFirstName,

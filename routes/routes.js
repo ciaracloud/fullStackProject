@@ -21,6 +21,10 @@ router.get("/home", async (req, res) => {
   res.render("home.html", { locals: { data: data } });
 });
 
+router.get("/see_vacation", (req, res) => {
+  res.render("final.html");
+});
+
 // GET DATA ROUTES
 router.post("/get_hotels", async (req, res) => {
   const { yel_api_key, url } = req.body;
