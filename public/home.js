@@ -155,6 +155,9 @@ const getHotelsData = async (city, vacationId) => {
       restaurantImg.src = restaurant.image_url;
       restaurantImg.height = "200";
       restaurantImg.className = "restaurantImg";
+      const restaurantPrice = document.createElement("p");
+      restaurantPrice.innerText = restaurant.price;
+      restaurantPrice.className = "restaurantPrice";
       const restaurantRating = document.createElement("p");
       restaurantRating.innerText = restaurant.rating;
       restaurantRating.className = "restaurantRating";
@@ -174,6 +177,7 @@ const getHotelsData = async (city, vacationId) => {
           name: restaurant.name,
           imageUrl: restaurant.image_url,
           rating: restaurant.rating,
+          price: restaurant.price,
           address: restaurant.location.address1,
           phoneNumber: restaurant.display_phone,
           vacationId: vacationId.id,
@@ -207,6 +211,7 @@ const getHotelsData = async (city, vacationId) => {
         restaurantName,
         restaurantImg,
         restaurantRating,
+        restaurantPrice,
         restaurantAddress,
         restaurantPhone,
         restaurantAddButton

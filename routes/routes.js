@@ -202,4 +202,29 @@ router.post("/find_excursions", async (req, res) => {
   }
 });
 
+// DELETE ROUTES
+router.post("/delete_hotel", async (req, res) => {
+  const { name } = req.body;
+  const deleteHotel = await db.Lodgings.destroy({
+    where: { name: name },
+  });
+  if (findHotel) {
+    res.status(200).send(deleteHotel);
+  } else {
+    res.status(400).send(deleteHotel);
+  }
+});
+
+router.post("/delete_restaurant", async (req, res) => {
+  const { name } = req.body;
+  const deleteRestaurant = await db.Restaurants.destroy({
+    where: { name: name },
+  });
+  if (deleteRestaurant) {
+    res.status(200).send(deleteRestaurant);
+  } else {
+    res.status(400).send(deleteRestaurant);
+  }
+});
+
 module.exports = router;
