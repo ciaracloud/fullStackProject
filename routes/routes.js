@@ -22,6 +22,19 @@ router.get("/home", async (req, res) => {
 });
 
 // GET DATA ROUTES
+router.post("/get_hotels", async (req, res) => {
+  const { yel_api_key, url } = req.body;
+  console.log(req.body);
+  let hotelInfo = await fetch(url, {
+    method: "get",
+    headers: {
+      Authorization: `Bearer ${yel_api_key}`,
+    },
+  });
+  let hotelJson = await hotelInfo.json();
+  res.status(200).send(hotelJson?.businesses);
+});
+
 router.post("/get_restaurants", async (req, res) => {
   const { yel_api_key, url } = req.body;
   console.log(req.body);
@@ -49,6 +62,15 @@ router.post("/get_excursions", async (req, res) => {
   res.status(200).send(excursionJson?.businesses);
 });
 
+router.post("/get_events", async (req, res) => {
+  const { url } = req.body;
+  console.log(req.body);
+  let eventInfo = await fetch(url);
+  let eventJson = await eventInfo.json();
+  // console.log(restaurantJson?.businesses);
+  res.status(200).send(eventJson?.events);
+});
+
 // CREATE ROUTES
 router.post("/create_vacation", async (req, res) => {
   const { firstName, lastName, startDate, endDate, city } = req.body;
@@ -66,6 +88,26 @@ router.post("/create_vacation", async (req, res) => {
     res.status(200).send(addVacation);
   } else {
     res.status(400).send(addVacation);
+  }
+});
+
+router.post("/create_hotel", async (req, res) => {
+  const { name, imageUrl, rating, price, address, phoneNumber, vacationId } =
+    req.body;
+  const newHotel = {
+    name: name,
+    imageUrl: imageUrl,
+    rating: rating,
+    price: price,
+    address: address,
+    phoneNumber: phoneNumber,
+    vacationId: vacationId,
+  };
+  const addHotel = await db.Lodgings.create(newHotel);
+  if (addHotel) {
+    res.status(200).send(addHotel);
+  } else {
+    res.status(400).send(addHotel);
   }
 });
 

@@ -2,13 +2,15 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return await queryInterface.bulkInsert("Hotels", [
+    return await queryInterface.bulkInsert("Lodgings", [
       {
-        firstName: "Kiwi",
-        lastName: "Mango",
-        startDate: "2022/09/01",
-        endDate: "2022/09/04",
-        city: "Dallas",
+        name: "Hotel Name",
+        imageUrl: "image.jpg",
+        rating: "4",
+        price: "$$$",
+        address: "123 Main St",
+        phoneNumber: "904-123-4567",
+        vacationId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
