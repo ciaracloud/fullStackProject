@@ -24,51 +24,71 @@
         </ul>
       </div>
     </div>
+    <!--***************************SPLASHY PAGE********************************************-->
+    <section class="splashy">
+      <div class="hero">
+        <h2>Take a trip....with KC Dev</h2>
+        <br />
+      </div>
+    </section>
 
-    <div class="container">
-      <div>
-        <h3>First Name:</h3>
-        <input
-          class="firstNameInput inputBox"
-          type="text"
-          placeholder="first name"
-        />
+    <!--*****************************INPUT DATA FORM SECTION*********************************-->
+    <section class="inputData">
+      <div class="container">
+        <div class="picture">
+          <img
+            src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+            alt=""
+          />
+        </div>
+        <div class="formContainer">
+          <div class="firstName">
+            <h3>First Name:</h3>
+            <input
+              class="firstNameInput"
+              type="text"
+              placeholder="first name"
+            />
+          </div>
+
+          <div class="lastName">
+            <h3>Last Name:</h3>
+            <input
+              class="lastNameInput inputBox"
+              type="text"
+              placeholder="last name"
+            />
+          </div>
+
+          <div class="startDate">
+            <h3>Departure Date</h3>
+            <input class="startDateInput inputBox" type="date" />
+          </div>
+
+          <div class="endDate">
+            <h3>Arrival Date</h3>
+            <input class="endDateInput inputBox" type="date" />
+          </div>
+
+          <div class="city">
+            <h3>Where to?</h3>
+            <input
+              class="cityInput inputBox"
+              type="text"
+              placeholder="destination"
+            />
+          </div>
+
+          <div>
+            <button class="searchButton">Search</button>
+          </div>
+          <div>
+            <button class="submitButton">Submit</button>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <h3>Last Name:</h3>
-        <input
-          class="lastNameInput inputBox"
-          type="text"
-          placeholder="last name"
-        />
-      </div>
-
-      <div>
-        <h3>Departure Date</h3>
-        <input class="startDateInput inputBox" type="date" />
-      </div>
-
-      <div>
-        <h3>Arrival Date</h3>
-        <input class="endDateInput inputBox" type="date" />
-      </div>
-
-      <div>
-        <h3>Where to?</h3>
-        <input
-          class="cityInput inputBox"
-          type="text"
-          placeholder="destination"
-        />
-      </div>
-
-      <div>
-        <button class="searchButton">Search</button>
-      </div>
-      <div>
-        <button class="submitButton">Submit</button>
-      </div>
+    </section>
       <div class="hotels"></div>
       <div class="restaurants"></div>
       <div class="excursions"></div>
