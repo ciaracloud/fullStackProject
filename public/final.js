@@ -6,81 +6,6 @@ const hotelContainer = document.querySelector(".hotelContainer");
 const restaurantsContainer = document.querySelector(".restaurantsContainer");
 const excursionsContainer = document.querySelector(".excursionsContainer");
 
-// let i = 0;
-// for (const hotel of hotelsJson) {
-//   i++;
-//   const hotelDiv = document.createElement("div");
-//   hotelDiv.className = `hotelDiv${i}`;
-//   const hotelName = document.createElement("p");
-//   hotelName.innerText = hotel.name;
-//   hotelName.className = "hotelName";
-//   const hotelImg = document.createElement("img");
-//   hotelImg.src = hotel.image_url;
-//   hotelImg.height = "200";
-//   hotelImg.className = "hotelImg";
-//   const hotelRating = document.createElement("p");
-//   hotelRating.innerText = hotel.rating;
-//   hotelRating.className = "hotelRating";
-//   const hotelPrice = document.createElement("p");
-//   hotelPrice.innerText = hotel.price;
-//   hotelPrice.className = "hotelPrice";
-//   const hotelAddress = document.createElement("p");
-//   hotelAddress.innerText = hotel.location.display_address;
-//   hotelAddress.className = "hotelAddress";
-//   const hotelPhone = document.createElement("p");
-//   hotelPhone.innerText = hotel.display_phone;
-//   hotelPhone.className = "hotelPhone";
-//   const hotelAddButton = document.createElement("button");
-//   hotelAddButton.innerText = "Add";
-//   hotelAddButton.className = "hotelAddButton";
-//   const addHotelToDB = async () => {
-//     hotelsContainer.remove();
-//     const hotelToCreate = {
-//       name: hotel.name,
-//       imageUrl: hotel.image_url,
-//       rating: hotel.rating,
-//       price: hotel.price,
-//       address: hotel.location.address1,
-//       phoneNumber: hotel.display_phone,
-//       vacationId: vacationId.id,
-//     };
-//     const createNewHotel = await fetch("http://localhost:3000/create_hotel", {
-//       method: "POST",
-//       mode: "cors",
-//       cache: "no-cache",
-//       credentials: "same-origin",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       redirect: "follow",
-//       referrerPolicy: "no-referrer",
-//       body: JSON.stringify(hotelToCreate),
-//     });
-//     // const responseFromRest = await createNewRestaurant.json();
-//     // console.log(responseFromRest);
-//     // // getRestaurantsData(inputCity, responseFromRest);
-//     if (createNewHotel.status === 200) {
-//       // window.location.assign("/hotels");
-//     } else {
-//       window.alert("Bruh, you messed up somewhere");
-//     }
-//   };
-
-//   hotelAddButton.addEventListener("click", async () => {
-//     addHotelToDB();
-//   });
-//   hotelDiv.append(
-//     hotelName,
-//     hotelImg,
-//     hotelRating,
-//     hotelPrice,
-//     hotelAddress,
-//     hotelPhone,
-//     hotelAddButton
-//   );
-//   hotelsContainer.append(hotelDiv);
-// }
-
 resIdButton.addEventListener("click", async () => {
   const resId = parseInt(resIdInput.value);
   console.log(resId);
@@ -161,7 +86,7 @@ resIdButton.addEventListener("click", async () => {
     hotelImg.className = "hotelImg";
     hotelImg.height = "200";
     const hotelRating = document.createElement("p");
-    hotelRating.innerText = `${hotel.rating}`;
+    hotelRating.innerText = `Rating: ${hotel.rating}`;
     hotelRating.className = "hotelRating";
     const hotelPrice = document.createElement("p");
     hotelPrice.innerText = `${hotel.price}`;
@@ -173,7 +98,6 @@ resIdButton.addEventListener("click", async () => {
     hotelDeleteButton.className = "hotelDeleteButton";
     hotelDeleteButton.innerText = "Delete";
     const deleteHotel = async () => {
-      hotelDiv.remove();
       const hotelToDelete = {
         name: hotel.name,
       };
@@ -198,7 +122,11 @@ resIdButton.addEventListener("click", async () => {
         window.alert("Bruh, you messed up somewhere");
       }
     };
-    hotelContainer.append(
+    hotelDeleteButton.addEventListener("click", () => {
+      hotelDiv.remove();
+      deleteHotel();
+    });
+    hotelDiv.append(
       hotelTitle,
       hotelName,
       hotelImg,
@@ -207,17 +135,18 @@ resIdButton.addEventListener("click", async () => {
       hotelPhoneNumber,
       hotelDeleteButton
     );
-    hotelDeleteButton.addEventListener("click", () => {
-      deleteHotel();
-    });
+    hotelContainer.append(hotelDiv);
   }
+
   const restaurantTitle = document.createElement("p");
   restaurantTitle.innerText = "Restaurants:";
   restaurantTitle.className = "restaurantTitle";
   restaurantsContainer.append(restaurantTitle);
+  let i = 0;
   for (const restaurant of restaurantsJson) {
+    i++;
     const restaurantDiv = document.createElement("div");
-    restaurantDiv.className = `restaurantDiv`;
+    restaurantDiv.className = `restaurantDiv${i}`;
     const restaurantName = document.createElement("p");
     restaurantName.innerText = `${restaurant.name}`;
     restaurantName.className = "restaurantName";
@@ -226,7 +155,7 @@ resIdButton.addEventListener("click", async () => {
     restaurantImg.className = "restaurantImg";
     restaurantImg.height = "200";
     const restaurantRating = document.createElement("p");
-    restaurantRating.innerText = `${restaurant.rating}`;
+    restaurantRating.innerText = `Rating: ${restaurant.rating}`;
     restaurantRating.className = "restaurantRating";
     const restaurantPrice = document.createElement("p");
     restaurantPrice.innerText = `${restaurant.price}`;
@@ -240,7 +169,6 @@ resIdButton.addEventListener("click", async () => {
     restaurantDeleteButton.className = "restaurantDeleteButton";
     restaurantDeleteButton.innerText = "Delete";
     const deleteRestaurant = async () => {
-      restaurantDiv.remove();
       const restaurantToDelete = {
         name: restaurant.name,
       };
@@ -259,16 +187,16 @@ resIdButton.addEventListener("click", async () => {
           body: JSON.stringify(restaurantToDelete),
         }
       );
-      // const responseFromRest = await createNewRestaurant.json();
-      // console.log(responseFromRest);
-      // // getRestaurantsData(inputCity, responseFromRest);
       if (deleteRestaurant.status === 200) {
-        // window.location.assign("/hotels");
       } else {
         window.alert("Bruh, you messed up somewhere");
       }
     };
-    restaurantsContainer.append(
+    restaurantDeleteButton.addEventListener("click", () => {
+      restaurantDiv.remove();
+      deleteRestaurant();
+    });
+    restaurantDiv.append(
       restaurantName,
       restaurantImg,
       restaurantRating,
@@ -277,11 +205,74 @@ resIdButton.addEventListener("click", async () => {
       restaurantAddress,
       restaurantDeleteButton
     );
-    restaurantDeleteButton.addEventListener("click", () => {
-      deleteRestaurant();
-    });
+    restaurantsContainer.append(restaurantDiv);
   }
+  const excursionTitle = document.createElement("p");
+  excursionTitle.innerText = "Excursions:";
+  excursionTitle.className = "excursionTitle";
+  excursionsContainer.append(excursionTitle);
+  let j = 0;
+  for (const excursion of excursionsJson) {
+    j++;
+    const excursionDiv = document.createElement("div");
+    excursionDiv.className = `excursionDiv${j} excursionDiv`;
+    const excursionName = document.createElement("p");
+    excursionName.innerText = `${excursion.name}`;
+    excursionName.className = "excursionName";
+    const excursionImg = document.createElement("img");
+    excursionImg.src = `${excursion.imageUrl}`;
+    excursionImg.className = "excursionImg";
+    excursionImg.height = "200";
+    const excursionRating = document.createElement("p");
+    excursionRating.innerText = `Rating: ${excursion.rating}`;
+    excursionRating.className = "excursionRating";
+    const excursionAddress = document.createElement("p");
+    excursionAddress.innerText = `${excursion.address}`;
+    const excursionPhoneNumber = document.createElement("p");
+    excursionPhoneNumber.innerText = `${excursion.phoneNumber}`;
+    excursionPhoneNumber.className = "excursionPhoneNumber";
+    const excursionDeleteButton = document.createElement("button");
+    excursionDeleteButton.className = "excursionDeleteButton";
+    excursionDeleteButton.innerText = "Delete";
+    const deleteExcursion = async () => {
+      const excursionToDelete = {
+        name: excursion.name,
+      };
+      const deleteExcursion = await fetch(
+        "http://localhost:3000/delete_excursion",
+        {
+          method: "POST",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+          referrerPolicy: "no-referrer",
+          body: JSON.stringify(excursionToDelete),
+        }
+      );
 
+      if (deleteExcursion.status === 200) {
+      } else {
+        window.alert("Bruh, you messed up somewhere");
+      }
+    };
+    excursionDeleteButton.addEventListener("click", () => {
+      excursionDiv.remove();
+      deleteExcursion();
+    });
+    excursionDiv.append(
+      excursionName,
+      excursionImg,
+      excursionRating,
+      excursionPhoneNumber,
+      excursionAddress,
+      excursionDeleteButton
+    );
+    excursionsContainer.append(excursionDiv);
+  }
   console.log("vacation data:", vacationJson);
   console.log("hotel data:", hotelJson);
   console.log("excursions data:", excursionsJson);

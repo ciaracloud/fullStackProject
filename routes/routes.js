@@ -208,10 +208,10 @@ router.post("/delete_hotel", async (req, res) => {
   const deleteHotel = await db.Lodgings.destroy({
     where: { name: name },
   });
-  if (findHotel) {
-    res.status(200).send(deleteHotel);
+  if (deleteHotel) {
+    res.status(200).send("deleted hotels");
   } else {
-    res.status(400).send(deleteHotel);
+    res.status(400).send("error");
   }
 });
 
@@ -221,9 +221,21 @@ router.post("/delete_restaurant", async (req, res) => {
     where: { name: name },
   });
   if (deleteRestaurant) {
-    res.status(200).send(deleteRestaurant);
+    res.status(200).send("deleted restaurant");
   } else {
-    res.status(400).send(deleteRestaurant);
+    res.status(400).send("error");
+  }
+});
+
+router.post("/delete_excursion", async (req, res) => {
+  const { name } = req.body;
+  const deleteRestaurant = await db.Excursions.destroy({
+    where: { name: name },
+  });
+  if (deleteRestaurant) {
+    res.status(200).send("deleted excursion");
+  } else {
+    res.status(400).send("error");
   }
 });
 

@@ -53,7 +53,7 @@ const getHotelsData = async (city, vacationId) => {
     hotelImg.height = "200";
     hotelImg.className = "hotelImg";
     const hotelRating = document.createElement("p");
-    hotelRating.innerText = hotel.rating;
+    hotelRating.innerText = `Rating: ${hotel.rating}`;
     hotelRating.className = "hotelRating";
     const hotelPrice = document.createElement("p");
     hotelPrice.innerText = hotel.price;
@@ -159,7 +159,7 @@ const getHotelsData = async (city, vacationId) => {
       restaurantPrice.innerText = restaurant.price;
       restaurantPrice.className = "restaurantPrice";
       const restaurantRating = document.createElement("p");
-      restaurantRating.innerText = restaurant.rating;
+      restaurantRating.innerText = `Rating: ${restaurant.rating}`;
       restaurantRating.className = "restaurantRating";
       const restaurantAddress = document.createElement("p");
       restaurantAddress.innerText = restaurant.location.display_address;
@@ -260,7 +260,7 @@ const getHotelsData = async (city, vacationId) => {
         excursionImg.height = "200";
         excursionImg.className = "excursionImg";
         const excursionRating = document.createElement("p");
-        excursionRating.innerText = excursion.rating;
+        excursionRating.innerText = `Rating: ${excursion.rating}`;
         excursionRating.className = "excursionRating";
         const excursionAddress = document.createElement("p");
         excursionAddress.innerText = excursion.location.display_address;
