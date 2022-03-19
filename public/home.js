@@ -77,6 +77,7 @@ const getHotelsData = async (city, vacationId) => {
     const hotelImg = document.createElement("img");
     hotelImg.src = hotel.image_url;
     hotelImg.height = "200";
+    hotelImg.width = "300";
     hotelImg.className = "hotelImg";
     //if i append to `hotelDiv${i}; nothing shows up
 
@@ -103,6 +104,10 @@ const getHotelsData = async (city, vacationId) => {
     const hotelAddButton = document.createElement("button");
     hotelAddButton.innerText = "Add";
     hotelAddButton.className = "hotelAddButton";
+
+    const line = document.createElement("hr");
+    line.className = "line";
+
     const addHotelToDB = async () => {
       hotelsContainer.remove();
       const hotelToCreate = {
@@ -140,6 +145,7 @@ const getHotelsData = async (city, vacationId) => {
       addHotelToDB();
     });
     hotelDiv.append(
+      line,
       hotelName,
       hotelImg,
       hotelRating,
@@ -148,6 +154,7 @@ const getHotelsData = async (city, vacationId) => {
       hotelPhone,
       hotelAddButton
     );
+    hotelsContainer.append(line);
     hotelsContainer.append(hotelDiv);
   }
   const restaurantsButton = document.createElement("button");

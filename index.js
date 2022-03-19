@@ -29,4 +29,4 @@ app.use("", routes);
 const yel_api_key = process.env.YEL_API_KEY;
 const sg_api_key = process.env.SG_API_KEY;
 
-app.listen(PORT, console.log(`LISTENING on http://localhost${PORT}`));
+app.listen(PORT, console.log(`UTAH!  Gimmie me ${PORT}`));

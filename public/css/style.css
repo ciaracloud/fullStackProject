@@ -83,6 +83,9 @@
   .links.active {
     display: flex;
   }
+  .brand {
+    width: 250px;
+  }
 }
 /**************************NAVBAR STYLING END***********************/
 
@@ -224,6 +227,18 @@ h2 {
   text-transform: none;
   margin-top: 1rem;
 }
+
+@media (max-width: 320px) {
+  .body {
+    display: flex;
+    align-items: center;
+  }
+  .inputData {
+    display: flex;
+    align-items: center;
+  }
+}
+
 /*******************************PERSONALALIZED PAGE STARTS BELOW***************************/
 
 .welcoming .welcomeContainer {
@@ -269,6 +284,20 @@ h2 {
   flex-direction: column;
 }
 
+@media (max-width: 320px) {
+  .welcoming {
+    display: flex;
+    align-items: center;
+  }
+  .inputData {
+    display: flex;
+    align-items: center;
+  }
+  .cruise {
+    display: none;
+  }
+}
+
 /******************************END PERSONALIZED PAGE**************************************/
 
 /******************************HOTELS BELOW***********************************************/
@@ -286,7 +315,7 @@ h2 {
 .hotelDiv1 {
   display: grid;
   height: 200px;
-  width: 650px;
+  width: 700px;
   grid-template-areas:
     "img img name rating"
     "img img address price"
@@ -294,9 +323,16 @@ h2 {
   grid-template-columns: 220px;
   grid-template-rows: 80px;
   margin-bottom: 50px;
+  margin-top: 50px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* justify-items: stretch; */
 }
 .hotelName {
   grid-area: name;
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 50px;
 }
 
 .hotelImg {
@@ -305,31 +341,45 @@ h2 {
 
 .hotelRating {
   grid-area: rating;
+  margin-left: 50px;
 }
 .hotelAddress {
   grid-area: address;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 20px;
+  margin-left: 50px;
 }
 .hotelPhone {
   grid-area: phone;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 20px;
+  margin-left: 50px;
 }
 .hotelPrice {
   grid-area: price;
+  margin-left: 50px;
 }
 
 .hotelAddButton {
   grid-area: button;
+  margin-left: 50px;
+  width: 50px;
+  height: 30px;
 }
 
 .hotelDiv2 {
   display: grid;
   height: 200px;
-  width: 650px;
+  width: 700px;
   grid-template-areas:
     "img img name rating"
     "img img address price"
     "img img phone button";
   grid-template-columns: 220px;
   grid-template-rows: 80px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .hotelName {
@@ -360,13 +410,14 @@ h2 {
 .hotelDiv3 {
   display: grid;
   height: 200px;
-  width: 650px;
+  width: 700px;
   grid-template-areas:
     "img img name rating"
     "img img address price"
     "img img phone button";
   grid-template-columns: 220px;
   grid-template-rows: 80px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .hotelName {
@@ -394,13 +445,95 @@ h2 {
   grid-area: button;
 }
 
-/* .hotelImageContainer {
-  display: flex;
+.restaurantButton {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  float: right;
+  margin-right: 20px;
 }
 
-.hotelInfoColumn1 {
-  display: flex;
-  flex-direction: column;
-} */
+@media (max-width: 770px) {
+  .hotelDiv1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  .hotelDiv2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  .hotelDiv3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  .restaurantButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    float: right;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hotels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 50px; */
+    margin-top: 5200px;
+    margin-left: 20px;
+
+    /* margin-bottom: 200px; */
+  }
+
+  .hotelName {
+    font-size: 15px;
+  }
+  .hotelAddress {
+    font-size: 10px;
+  }
+  .hotelPhone {
+    font-size: 10px;
+  }
+  /* .hotelDiv2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 50px; */
+  /* margin-top: 50px;
+    margin-bottom: 200px; */
+  /* }
+  .hotelDiv3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
+  /* margin-left: 50px; */
+  /* margin-top: 50px;
+    margin-bottom: 200px;
+  } */
+  .restaurantButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* float: right; */
+    /* margin-right: 20px; */
+  }
+}
 
 /******************************HOTELS ABOVE*******************************************/
