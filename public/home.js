@@ -1,4 +1,5 @@
-const yel_api_key = "";
+const yel_api_key =
+  "zAoA5NgLXskeGgOla0Y3d5P8ZvfOAZiNw8JdBWuYR4FzjqajphGIPIBeFkClunh2cVDENilhN7cCp2UrksNjRpQnSfzSlzXgDR9380IQqcXEsxie-WD0O_jltoEqYnYx";
 
 const inputsArray = [];
 
@@ -12,11 +13,38 @@ checkVacationButton.addEventListener("click", () => {
 const getHotelsData = async (city, vacationId) => {
   const formContainer = document.querySelector(".formContainer");
   formContainer.remove();
+
   const welcomeContainer = document.querySelector(".welcomeContainer");
+  const newWelcome = document.querySelector(".newWelcome");
+
+  const cruise = document.createElement("img");
+  cruise.className = "cruise";
+  cruise.setAttribute(
+    "src",
+    "https://images.unsplash.com/photo-1499062918700-389fa905494e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
+  );
+  welcomeContainer.append(cruise);
+
+  const image1 = document.createElement("img");
+  image1.className = "image1";
+  image1.setAttribute(
+    "src",
+    "https://images.unsplash.com/photo-1531938716357-224c16b5ace3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+  );
+  newWelcome.append(image1);
   const welcomeParagraph = document.createElement("p");
   welcomeParagraph.className = "welcomeParagraph";
   welcomeParagraph.innerText = `Welcome ${inputsArray[0]} ${inputsArray[1]}! Let's start planning your trip to ${inputsArray[4]} from ${inputsArray[2]} to ${inputsArray[3]}! Here is your reservation ID: ${vacationId.id}. Make sure to keep track of it in order to look up and make changes to your trip.`;
-  welcomeContainer.append(welcomeParagraph);
+  newWelcome.append(welcomeParagraph);
+
+  const image2 = document.createElement("img");
+  image2.className = "image1";
+  image2.setAttribute(
+    "src",
+    "https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+  );
+  newWelcome.append(image2);
+
   const hotelObject = {
     city: city,
     url: `https://api.yelp.com/v3/businesses/search?location="${city}"&term="hotels"&limit=3`,
@@ -36,34 +64,42 @@ const getHotelsData = async (city, vacationId) => {
   });
   let hotelsJson = await hotelInfo.json();
   const hotelsContainer = document.querySelector(".hotels");
-  const hotelsTitle = document.createElement("p");
-  hotelsTitle.className = "hotelsTitle";
-  hotelsTitle.innerText = "Choose a hotel from below:";
-  hotelsContainer.append(hotelsTitle);
+  // const hotelsTitle = document.createElement("p");
+  // hotelsTitle.className = "hotelsTitle";
+  // hotelsTitle.innerText = "Choose a hotel from below:";
+  // hotelsContainer.append(hotelsTitle);
   let i = 0;
   for (const hotel of hotelsJson) {
     i++;
     const hotelDiv = document.createElement("div");
     hotelDiv.className = `hotelDiv${i}`;
-    const hotelName = document.createElement("p");
-    hotelName.innerText = hotel.name;
-    hotelName.className = "hotelName";
+
     const hotelImg = document.createElement("img");
     hotelImg.src = hotel.image_url;
     hotelImg.height = "200";
     hotelImg.className = "hotelImg";
+    //if i append to `hotelDiv${i}; nothing shows up
+
+    ///---------------------------
+
+    const hotelName = document.createElement("p");
+    hotelName.innerText = hotel.name;
+    hotelName.className = "hotelName";
+
+    const hotelAddress = document.createElement("p");
+    hotelAddress.innerText = hotel.location.display_address;
+    hotelAddress.className = "hotelAddress";
+
+    const hotelPhone = document.createElement("p");
+    hotelPhone.innerText = hotel.display_phone;
+    hotelPhone.className = "hotelPhone";
+
     const hotelRating = document.createElement("p");
     hotelRating.innerText = hotel.rating;
     hotelRating.className = "hotelRating";
     const hotelPrice = document.createElement("p");
     hotelPrice.innerText = hotel.price;
     hotelPrice.className = "hotelPrice";
-    const hotelAddress = document.createElement("p");
-    hotelAddress.innerText = hotel.location.display_address;
-    hotelAddress.className = "hotelAddress";
-    const hotelPhone = document.createElement("p");
-    hotelPhone.innerText = hotel.display_phone;
-    hotelPhone.className = "hotelPhone";
     const hotelAddButton = document.createElement("button");
     hotelAddButton.innerText = "Add";
     hotelAddButton.className = "hotelAddButton";
@@ -393,4 +429,14 @@ const createVacation = async () => {
 
 searchButton.addEventListener("click", () => {
   createVacation();
+  const cruise = document.cr;
 });
+
+//********************navbar funcitonality */
+const toggle = document.querySelectorAll(".toggle")[0];
+const links = document.querySelectorAll(".links")[0];
+
+toggle.addEventListener("click", () => {
+  links.classList.toggle("active");
+});
+//**********************end navbar functionality */

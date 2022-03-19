@@ -1,11 +1,10 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
+
 /**************************NAVBAR STYLING*************************** */
 .navbar {
   display: flex;
@@ -225,3 +224,183 @@ h2 {
   text-transform: none;
   margin-top: 1rem;
 }
+/*******************************PERSONALALIZED PAGE STARTS BELOW***************************/
+
+.welcoming .welcomeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+  margin-bottom: 10px;
+}
+
+.welcoming .welcomeContainer .welcomePicture {
+  flex: 1 1 40rem;
+}
+
+.newWelcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cruise {
+  width: 50%;
+}
+
+.welcomeParagraph {
+  color: blue;
+  font-size: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.image1 {
+  height: 150px;
+  width: 300px;
+  flex-direction: column;
+}
+
+.image2 {
+  height: 150px;
+  width: 300px;
+  flex-direction: column;
+}
+
+/******************************END PERSONALIZED PAGE**************************************/
+
+/******************************HOTELS BELOW***********************************************/
+.hotels {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/* .hotelsTitle {
+  display: flex;
+  flex-direction: column;
+} */
+.hotelDiv1 {
+  display: grid;
+  height: 200px;
+  width: 650px;
+  grid-template-areas:
+    "img img name rating"
+    "img img address price"
+    "img img phone button";
+  grid-template-columns: 220px;
+  grid-template-rows: 80px;
+  margin-bottom: 50px;
+}
+.hotelName {
+  grid-area: name;
+}
+
+.hotelImg {
+  grid-area: img;
+}
+
+.hotelRating {
+  grid-area: rating;
+}
+.hotelAddress {
+  grid-area: address;
+}
+.hotelPhone {
+  grid-area: phone;
+}
+.hotelPrice {
+  grid-area: price;
+}
+
+.hotelAddButton {
+  grid-area: button;
+}
+
+.hotelDiv2 {
+  display: grid;
+  height: 200px;
+  width: 650px;
+  grid-template-areas:
+    "img img name rating"
+    "img img address price"
+    "img img phone button";
+  grid-template-columns: 220px;
+  grid-template-rows: 80px;
+  margin-bottom: 50px;
+}
+.hotelName {
+  grid-area: name;
+}
+
+.hotelImg {
+  grid-area: img;
+}
+
+.hotelRating {
+  grid-area: rating;
+}
+.hotelAddress {
+  grid-area: address;
+}
+.hotelPhone {
+  grid-area: phone;
+}
+.hotelPrice {
+  grid-area: price;
+}
+
+.hotelAddButton {
+  grid-area: button;
+}
+
+.hotelDiv3 {
+  display: grid;
+  height: 200px;
+  width: 650px;
+  grid-template-areas:
+    "img img name rating"
+    "img img address price"
+    "img img phone button";
+  grid-template-columns: 220px;
+  grid-template-rows: 80px;
+  margin-bottom: 50px;
+}
+.hotelName {
+  grid-area: name;
+}
+
+.hotelImg {
+  grid-area: img;
+}
+
+.hotelRating {
+  grid-area: rating;
+}
+.hotelAddress {
+  grid-area: address;
+}
+.hotelPhone {
+  grid-area: phone;
+}
+.hotelPrice {
+  grid-area: price;
+}
+
+.hotelAddButton {
+  grid-area: button;
+}
+
+/* .hotelImageContainer {
+  display: flex;
+}
+
+.hotelInfoColumn1 {
+  display: flex;
+  flex-direction: column;
+} */
+
+/******************************HOTELS ABOVE*******************************************/
