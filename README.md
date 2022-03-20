@@ -20,8 +20,8 @@ Vacay Buddy is a website that helps users plan and store information for their v
 
 ## Database structure (with dummy data):
 
-![Database Diagram](images/databaseDiagram1.png)
+<img src="images/databaseDiagram1.png" alt="databaseDiagram" width="450"/>
 
 ## Color Palette:
 
-![Color Palette](images/colorPalette.png)
+<img src="images/colorPalette.png" alt="colorPalette" width="450"/>
