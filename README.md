@@ -1,8 +1,10 @@
 # Vacay Buddy
 
-## Description:
+## Overview:
 
 Vacay Buddy is a website that helps users plan and store information for their vacation. They can input their name, and the dates and city of their vacation and a list of hotels, restaurants, and excursions will appear for them to choose from.
+
+## Key Features
 
 ## Technologies used:
 
@@ -18,7 +20,7 @@ Vacay Buddy is a website that helps users plan and store information for their v
 
 - [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3)
 
-## Database structure (with dummy data):
+## Database schema (with dummy data):
 
 <img src="images/databaseDiagram1.png" alt="databaseDiagram" width="550"/>
 
