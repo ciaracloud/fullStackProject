@@ -1,17 +1,30 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5cd6d;
 }
 
 body {
   margin: 0;
   padding: 0;
 }
+
+hr {
+  height: 8px;
+
+  background-image: linear-gradient(90deg, #b9f9ff, transparent);
+
+  border: 0;
+  height: 1px;
+}
 /**************************NAVBAR STYLING*************************** */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #f5cd6d;
   color: white;
 }
 
@@ -32,13 +45,13 @@ body {
 
 .links li a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
   padding: 1rem;
   display: block;
 }
 
 .links li:hover {
-  background-color: #555;
+  background-color: #dafdff;
 }
 
 .toggle {
@@ -111,7 +124,7 @@ body {
 
 h2 {
   position: relative;
-  color: #ffffff;
+  color: #b9f9ff;
   font-size: 4rem;
   line-height: 0.9;
   text-align: center;
@@ -225,8 +238,6 @@ h2 {
   text-transform: none;
   margin-top: 1rem;
 }
-<<<<<<< Updated upstream
-=======
 
 @media (max-width: 320px) {
   .body {
@@ -1024,7 +1035,7 @@ h2 {
 /*********************EXCURSIONS ABOVE********************************/
 
 /*********************HOTEL FINAL PAGE BELOW********************************/
-.hotelContainer {
+.hotelDiv {
   display: grid;
   height: 200px;
   width: 700px;
@@ -1142,7 +1153,7 @@ h2 {
 /*********************HOTEL FINAL PAGE ABOVE********************************/
 
 /*********************RESTAURANT FINAL PAGE BELOW***************************/
-.restaurantsContainer {
+.restaurantDiv1 {
   display: grid;
   height: 200px;
   width: 700px;
@@ -1260,7 +1271,7 @@ h2 {
 /*********************RESTAURANT FINAL PAGE ABOVE***************************/
 
 /*********************EXCURSIONS FINAL PAGE BELOW***************************/
-.excursionsContainer {
+.excursionDiv1 {
   display: grid;
   height: 200px;
   width: 700px;
@@ -1275,6 +1286,10 @@ h2 {
   /* margin-left: auto;
   margin-right: auto; */
   /* justify-items: stretch; */
+}
+
+.excursionsContainer {
+  margin-bottom: 20px;
 }
 
 .excursionTitle {
@@ -1376,4 +1391,3 @@ h2 {
 }
 
 /*********************EXCURSIONS FINAL PAGE ABOVE***************************/
->>>>>>> Stashed changes
