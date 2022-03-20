@@ -281,77 +281,12 @@ resIdButton.addEventListener("click", async () => {
           body: JSON.stringify(excursionToDelete),
         }
       );
-
-<<<<<<< Updated upstream
-      if (deleteExcursion.status === 200) {
-=======
-  //   console.log("vacation data:", vacationJson);
-  //   console.log("hotel data:", hotelJson);
-  //   console.log("excursions data:", excursionsJson);
-  //   console.log("restaurants data:", restaurantsJson);
-  // });
-
-  const excursionTitle = document.createElement("p");
-  excursionTitle.innerText = "Excursions:";
-  excursionTitle.className = "excursionTitle";
-  excursionsContainer.append(excursionTitle);
-  for (const excursion of excursionsJson) {
-    const excursionDiv = document.createElement("div");
-    excursionDiv.className = `excursionDiv`;
-    const excursionName = document.createElement("p");
-    excursionName.innerText = `${excursion.name}`;
-    excursionName.className = "excursionName";
-    const excursionImg = document.createElement("img");
-    excursionImg.src = `${excursion.imageUrl}`;
-    excursionImg.className = "excursionImg";
-    excursionImg.height = "200";
-
-    const excursionRating = document.createElement("p");
-    excursionRating.innerText = `${excursion.rating}`;
-    excursionRating.className = "excursionRating";
-    const excursionPrice = document.createElement("p");
-    excursionPrice.innerText = `${excursion.price}`;
-    excursionPrice.className = "excursionPrice";
-    const excursionAddress = document.createElement("p");
-    excursionAddress.innerText = `${excursion.address}`;
-    excursionAddress.className = "excursionAddress";
-    const excursionPhoneNumber = document.createElement("p");
-    excursionPhoneNumber.innerText = `${excursion.phoneNumber}`;
-    excursionPhoneNumber.className = "excursionPhoneNumber";
-    const excursionDeleteButton = document.createElement("button");
-    excursionDeleteButton.className = "excursionDeleteButton";
-    excursionDeleteButton.innerText = "Delete";
-    const deleteExcursion = async () => {
-      excursionDiv.remove();
-      const excursionToDelete = {
-        name: excursion.name,
-      };
-      const deleteExcursion = await fetch(
-        "http://localhost:3000/delete_excursion",
-        {
-          method: "POST",
-          mode: "cors",
-          cache: "no-cache",
-          credentials: "same-origin",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          redirect: "follow",
-          referrerPolicy: "no-referrer",
-          body: JSON.stringify(excursionToDelete),
-        }
-      );
-      // const responseFromRest = await createNewRestaurant.json();
-      // console.log(responseFromRest);
-      // // getRestaurantsData(inputCity, responseFromRest);
       if (deleteExcursion.status === 200) {
         // window.location.assign("/hotels");
->>>>>>> Stashed changes
       } else {
         window.alert("Bruh, you messed up somewhere");
       }
     };
-<<<<<<< Updated upstream
     excursionDeleteButton.addEventListener("click", () => {
       excursionDiv.remove();
       deleteExcursion();
@@ -360,18 +295,10 @@ resIdButton.addEventListener("click", async () => {
       excursionName,
       excursionImg,
       excursionRating,
-=======
-    excursionsContainer.append(
-      excursionName,
-      excursionImg,
-      excursionRating,
-      excursionPrice,
->>>>>>> Stashed changes
       excursionPhoneNumber,
       excursionAddress,
       excursionDeleteButton
     );
-<<<<<<< Updated upstream
     excursionsContainer.append(excursionDiv);
     excursionsContainer.append(line);
   }
@@ -379,15 +306,7 @@ resIdButton.addEventListener("click", async () => {
   console.log("hotel data:", hotelJson);
   console.log("excursions data:", excursionsJson);
   console.log("restaurants data:", restaurantsJson);
-=======
-    excursionDeleteButton.addEventListener("click", () => {
-      deleteExcursion();
-    });
-  }
-
-  //   console.log("vacation data:", vacationJson);
-  //   console.log("hotel data:", hotelJson);
-  //   console.log("excursions data:", excursionsJson);
-  //   console.log("restaurants data:", restaurantsJson);
->>>>>>> Stashed changes
+  excursionDeleteButton.addEventListener("click", () => {
+    deleteExcursion();
+  });
 });
