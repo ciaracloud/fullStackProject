@@ -68,12 +68,14 @@ resIdButton.addEventListener("click", async () => {
     const vacationDiv = document.createElement("div");
     vacationDiv.className = `vacationDiv`;
     const vacationParagraph = document.createElement("p");
-    vacationParagraph.innerText = `Hello ${vacation.firstName} ${vacation.lastName}! \n 
-    Here are the details for your trip to ${vacation.city} from ${vacation.startDate} to ${vacation.endDate}:`;
+
+    vacationParagraph.innerText = `\n Hello ${vacation.firstName} ${vacation.lastName}! \n 
+    Here are the details for your trip to ${vacation.city}:`;
     vacationParagraph.className = "vacationParagraph";
     vacationContainer.append(vacationParagraph);
     const line = document.createElement("hr");
     line.className = "line";
+    vacationParagraph.append(line);
   }
   for (const hotel of hotelJson) {
     const hotelDiv = document.createElement("div");
@@ -94,6 +96,7 @@ resIdButton.addEventListener("click", async () => {
     hotelImg.src = `${hotel.imageUrl}`;
     hotelImg.className = "hotelImg";
     hotelImg.height = "200";
+    hotelImg.width = "300";
     const hotelRating = document.createElement("p");
     hotelRating.innerText = `Rating: ${hotel.rating}`;
     hotelRating.className = "hotelRating";
@@ -106,6 +109,9 @@ resIdButton.addEventListener("click", async () => {
     const hotelDeleteButton = document.createElement("button");
     hotelDeleteButton.className = "hotelDeleteButton";
     hotelDeleteButton.innerText = "Delete";
+
+    const line = document.createElement("hr");
+    line.className = "line";
 
     const deleteHotel = async () => {
       const hotelToDelete = {
@@ -145,7 +151,9 @@ resIdButton.addEventListener("click", async () => {
       hotelPhoneNumber,
       hotelDeleteButton
     );
+
     hotelContainer.append(hotelDiv);
+    hotelContainer.append(line);
   }
 
   const restaurantTitle = document.createElement("p");
@@ -164,7 +172,7 @@ resIdButton.addEventListener("click", async () => {
     restaurantImg.src = `${restaurant.imageUrl}`;
     restaurantImg.className = "restaurantImg";
     restaurantImg.height = "200";
-
+    restaurantImg.width = "300";
     const restaurantRating = document.createElement("p");
     restaurantRating.innerText = `Rating: ${restaurant.rating}`;
     restaurantRating.className = "restaurantRating";
@@ -180,6 +188,10 @@ resIdButton.addEventListener("click", async () => {
     const restaurantDeleteButton = document.createElement("button");
     restaurantDeleteButton.className = "restaurantDeleteButton";
     restaurantDeleteButton.innerText = "Delete";
+
+    const line = document.createElement("hr");
+    line.className = "line";
+
     const deleteRestaurant = async () => {
       const restaurantToDelete = {
         name: restaurant.name,
@@ -218,6 +230,7 @@ resIdButton.addEventListener("click", async () => {
       restaurantDeleteButton
     );
     restaurantsContainer.append(restaurantDiv);
+    restaurantsContainer.append(line);
   }
   const excursionTitle = document.createElement("p");
   excursionTitle.innerText = "Excursions:";
@@ -235,6 +248,7 @@ resIdButton.addEventListener("click", async () => {
     excursionImg.src = `${excursion.imageUrl}`;
     excursionImg.className = "excursionImg";
     excursionImg.height = "200";
+    excursionImg.width = "300";
     const excursionRating = document.createElement("p");
     excursionRating.innerText = `Rating: ${excursion.rating}`;
     excursionRating.className = "excursionRating";
@@ -246,6 +260,8 @@ resIdButton.addEventListener("click", async () => {
     const excursionDeleteButton = document.createElement("button");
     excursionDeleteButton.className = "excursionDeleteButton";
     excursionDeleteButton.innerText = "Delete";
+    const line = document.createElement("hr");
+    line.className = "line";
     const deleteExcursion = async () => {
       const excursionToDelete = {
         name: excursion.name,
@@ -357,6 +373,7 @@ resIdButton.addEventListener("click", async () => {
     );
 <<<<<<< Updated upstream
     excursionsContainer.append(excursionDiv);
+    excursionsContainer.append(line);
   }
   console.log("vacation data:", vacationJson);
   console.log("hotel data:", hotelJson);
