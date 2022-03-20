@@ -25,23 +25,26 @@ const getHotelsData = async (city, vacationId) => {
   );
   welcomeContainer.append(cruise);
 
-  const image1 = document.createElement("img");
-  image1.className = "image1";
-  image1.setAttribute(
-    "src",
-    "https://images.unsplash.com/photo-1531938716357-224c16b5ace3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-  );
-  newWelcome.append(image1);
+  // const image1 = document.createElement("img");
+  // image1.className = "image1";
+  // image1.setAttribute(
+  //   "src",
+  //   "https://images.unsplash.com/photo-1531938716357-224c16b5ace3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+  // );
+  // newWelcome.append(image1);
   const welcomeParagraph = document.createElement("p");
   welcomeParagraph.className = "welcomeParagraph";
-  welcomeParagraph.innerText = `Welcome ${inputsArray[0]} ${inputsArray[1]}! Let's start planning your trip to ${inputsArray[4]} from ${inputsArray[2]} to ${inputsArray[3]}! Here is your reservation ID: ${vacationId.id}. Make sure to keep track of it in order to look up and make changes to your trip.`;
+  welcomeParagraph.innerText = `Welcome ${inputsArray[0]} ${inputsArray[1]}! 
+  Let's start planning your trip to ${inputsArray[4]}!  
+  Here is your reservation ID: ${vacationId.id}. 
+  Make sure to keep track of it in order to look up and make changes to your trip.`;
   newWelcome.append(welcomeParagraph);
 
   const image2 = document.createElement("img");
   image2.className = "image1";
   image2.setAttribute(
     "src",
-    "https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrRuEwiXEB-2oq3m5P5hs3R1GJ_hpRIdIZfsLiTqoytfS1_x4&s"
   );
   newWelcome.append(image2);
 
