@@ -1,6 +1,6 @@
 # Vacay Buddy
 
-<img src="images/vacay7.jpg" alt="vacayBuddyScreenshot" width="600"/>
+<img src="images/vacay7.jpg" alt="vacayBuddyScreenshot" width="800"/>
 
 ## Overview:
 
