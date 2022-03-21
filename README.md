@@ -2,9 +2,7 @@
 
 ## Overview:
 
-Vacay Buddy is a website that helps users plan and store information for their vacation. They can input their name, and the dates and city of their vacation and a list of hotels, restaurants, and excursions will appear for them to choose from.
-
-## Key Features
+Vacay Buddy is a website that helps users plan their vacation by providing all relevant information for multiple hotels, restaurants, and excursions in the city that they plan on visiting. Once the user inputs their information, they can simply click the "add" button next to what they are interested in and it will be stored in the database with a reservation ID for that specific vacation. All of the user's choices and vacation details are stored in a database so they can look up their vacation with the reservation ID to read and/or make changes to the trip anytime they need to.
 
 ## Technologies used:
 

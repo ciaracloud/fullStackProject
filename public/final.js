@@ -129,13 +129,9 @@ resIdButton.addEventListener("click", async () => {
         referrerPolicy: "no-referrer",
         body: JSON.stringify(hotelToDelete),
       });
-      // const responseFromRest = await createNewRestaurant.json();
-      // console.log(responseFromRest);
-      // // getRestaurantsData(inputCity, responseFromRest);
       if (deleteHotel.status === 200) {
-        // window.location.assign("/hotels");
       } else {
-        window.alert("Bruh, you messed up somewhere");
+        window.alert("Error");
       }
     };
     hotelDeleteButton.addEventListener("click", () => {
@@ -146,6 +142,7 @@ resIdButton.addEventListener("click", async () => {
       hotelTitle,
       hotelName,
       hotelImg,
+      hotelAddress,
       hotelRating,
       hotelPrice,
       hotelPhoneNumber,
@@ -302,10 +299,6 @@ resIdButton.addEventListener("click", async () => {
     excursionsContainer.append(excursionDiv);
     excursionsContainer.append(line);
   }
-  console.log("vacation data:", vacationJson);
-  console.log("hotel data:", hotelJson);
-  console.log("excursions data:", excursionsJson);
-  console.log("restaurants data:", restaurantsJson);
   excursionDeleteButton.addEventListener("click", () => {
     deleteExcursion();
   });
