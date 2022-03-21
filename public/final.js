@@ -210,7 +210,7 @@ resIdButton.addEventListener("click", async () => {
       );
       if (deleteRestaurant.status === 200) {
       } else {
-        window.alert("Bruh, you messed up somewhere");
+        window.alert("Error");
       }
     };
     restaurantDeleteButton.addEventListener("click", () => {
@@ -280,9 +280,8 @@ resIdButton.addEventListener("click", async () => {
         }
       );
       if (deleteExcursion.status === 200) {
-        // window.location.assign("/hotels");
       } else {
-        window.alert("Bruh, you messed up somewhere");
+        window.alert("Error");
       }
     };
     excursionDeleteButton.addEventListener("click", () => {
