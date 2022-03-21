@@ -251,6 +251,7 @@ resIdButton.addEventListener("click", async () => {
     excursionRating.className = "excursionRating";
     const excursionAddress = document.createElement("p");
     excursionAddress.innerText = `${excursion.address}`;
+    excursionAddress.className = "excursionAddress";
     const excursionPhoneNumber = document.createElement("p");
     excursionPhoneNumber.innerText = `${excursion.phoneNumber}`;
     excursionPhoneNumber.className = "excursionPhoneNumber";

@@ -1,4 +1,5 @@
-const yel_api_key = "";
+const yel_api_key =
+  "zAoA5NgLXskeGgOla0Y3d5P8ZvfOAZiNw8JdBWuYR4FzjqajphGIPIBeFkClunh2cVDENilhN7cCp2UrksNjRpQnSfzSlzXgDR9380IQqcXEsxie-WD0O_jltoEqYnYx";
 
 const inputsArray = [];
 
@@ -14,15 +15,15 @@ const getHotelsData = async (city, vacationId) => {
   formContainer.remove();
 
   const welcomeContainer = document.querySelector(".welcomeContainer");
-  const newWelcome = document.querySelector(".newWelcome");
+  // const newWelcome = document.querySelector(".newWelcome");
 
-  const cruise = document.createElement("img");
-  cruise.className = "cruise";
-  cruise.setAttribute(
-    "src",
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
-  );
-  welcomeContainer.append(cruise);
+  // const cruise = document.createElement("img");
+  // cruise.className = "cruise";
+  // cruise.setAttribute(
+  //   "src",
+  //   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
+  // );
+  // welcomeContainer.append(cruise);
 
   const welcomeParagraph = document.createElement("p");
   welcomeParagraph.className = "welcomeParagraph";
@@ -30,15 +31,15 @@ const getHotelsData = async (city, vacationId) => {
   Let's start planning your trip to ${inputsArray[4]}!
   Here is your reservation ID: ${vacationId.id}.
   Make sure to keep track of it in order to look up and make changes to your trip.`;
-  newWelcome.append(welcomeParagraph);
+  welcomeContainer.append(welcomeParagraph);
 
-  const image2 = document.createElement("img");
-  image2.className = "image1";
-  image2.setAttribute(
-    "src",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrRuEwiXEB-2oq3m5P5hs3R1GJ_hpRIdIZfsLiTqoytfS1_x4&s"
-  );
-  newWelcome.append(image2);
+  // const image2 = document.createElement("img");
+  // image2.className = "image1";
+  // image2.setAttribute(
+  //   "src",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrRuEwiXEB-2oq3m5P5hs3R1GJ_hpRIdIZfsLiTqoytfS1_x4&s"
+  // );
+  // newWelcome.append(image2);
 
   const hotelObject = {
     city: city,
@@ -244,6 +245,7 @@ const getHotelsData = async (city, vacationId) => {
         restaurantPhone,
         restaurantAddButton
       );
+
       restaurantContainer.append(line);
       restaurantContainer.append(restaurantDiv);
     }
