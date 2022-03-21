@@ -22,6 +22,15 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 <img src="images/databaseDiagram1.png" alt="databaseDiagram" width="550"/>
 
+## Screenshots:
+
+<img src="images/vacay1.png" alt="colorPalette" width="500"/>
+<img src="images/vacay2.png" alt="colorPalette" width="500"/>
+<img src="images/vacay3.png" alt="colorPalette" width="500"/>
+<img src="images/vacay4.png" alt="colorPalette" width="500"/>
+<img src="images/vacay5.png" alt="colorPalette" width="500"/>
+<img src="images/vacay6.png" alt="colorPalette" width="500"/>
+
 ## Color Palette:
 
 <img src="images/colorPalette2.png" alt="colorPalette" width="500"/>
