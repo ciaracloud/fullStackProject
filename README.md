@@ -40,6 +40,6 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 ## Read about our project:
 
-- To read more about our project check out [this blog post](https://www.yelp.com/developers/documentation/v3)!
+- To read more about our project check out [this blog post](https://dev.to/jareichert/what-nessie-and-a-full-stack-engineer-have-in-common-4n3f)!
 
 #### Built by @ciaracloud and @JAReichert
