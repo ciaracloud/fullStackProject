@@ -1,5 +1,7 @@
 # Vacay Buddy
 
+<img src="images/vacay1.jpg" alt="vacayBuddyScreenshot" width="500"/>
+
 ## Overview:
 
 Vacay Buddy is a website that helps users plan their vacation by providing all relevant information for multiple hotels, restaurants, and excursions in the city that they plan on visiting. Once the user inputs their information, they can simply click the "add" button next to what they are interested in and it will be stored in the database with a reservation ID for that specific vacation. All of the user's choices and vacation details are stored in a database so they can look up their vacation with the reservation ID to read and/or make changes to the trip anytime they need to.
@@ -24,12 +26,12 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 ## Screenshots:
 
-<img src="images/vacay1.png" alt="colorPalette" width="500"/>
-<img src="images/vacay2.png" alt="colorPalette" width="500"/>
-<img src="images/vacay3.png" alt="colorPalette" width="500"/>
-<img src="images/vacay4.png" alt="colorPalette" width="500"/>
-<img src="images/vacay5.png" alt="colorPalette" width="500"/>
-<img src="images/vacay6.png" alt="colorPalette" width="500"/>
+<img src="images/vacay1.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacay2.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacay3.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacay4.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacay5.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacay6.png" alt="vacayBuddyScreenshot" width="500"/>
 
 ## Color Palette:
 
