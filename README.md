@@ -1,7 +1,5 @@
 # Vacay Buddy
 
-#### Built by @ciaracloud and @JAReichert
-
 <img src="images/vacay7.jpg" alt="vacayBuddyScreenshot" width="800"/>
 
 ## Overview:
@@ -43,3 +41,5 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 ## Read about our project:
 
 - To read more about our project check out [this blog post](https://www.yelp.com/developers/documentation/v3)!
+
+#### Built by @ciaracloud and @JAReichert
