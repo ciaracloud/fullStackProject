@@ -73,9 +73,6 @@ resIdButton.addEventListener("click", async () => {
     Here are the details for your trip to ${vacation.city}:`;
     vacationParagraph.className = "vacationParagraph";
     vacationContainer.append(vacationParagraph);
-    const line = document.createElement("hr");
-    line.className = "line";
-    vacationParagraph.append(line);
   }
   for (const hotel of hotelJson) {
     const hotelDiv = document.createElement("div");
@@ -109,9 +106,6 @@ resIdButton.addEventListener("click", async () => {
     const hotelDeleteButton = document.createElement("button");
     hotelDeleteButton.className = "hotelDeleteButton";
     hotelDeleteButton.innerText = "Delete";
-
-    const line = document.createElement("hr");
-    line.className = "line";
 
     const deleteHotel = async () => {
       const hotelToDelete = {
@@ -150,7 +144,6 @@ resIdButton.addEventListener("click", async () => {
     );
 
     hotelContainer.append(hotelDiv);
-    hotelContainer.append(line);
   }
 
   const restaurantTitle = document.createElement("p");
@@ -185,9 +178,6 @@ resIdButton.addEventListener("click", async () => {
     const restaurantDeleteButton = document.createElement("button");
     restaurantDeleteButton.className = "restaurantDeleteButton";
     restaurantDeleteButton.innerText = "Delete";
-
-    const line = document.createElement("hr");
-    line.className = "line";
 
     const deleteRestaurant = async () => {
       const restaurantToDelete = {
@@ -227,7 +217,6 @@ resIdButton.addEventListener("click", async () => {
       restaurantDeleteButton
     );
     restaurantsContainer.append(restaurantDiv);
-    restaurantsContainer.append(line);
   }
   const excursionTitle = document.createElement("p");
   excursionTitle.innerText = "Excursions:";
@@ -258,8 +247,6 @@ resIdButton.addEventListener("click", async () => {
     const excursionDeleteButton = document.createElement("button");
     excursionDeleteButton.className = "excursionDeleteButton";
     excursionDeleteButton.innerText = "Delete";
-    const line = document.createElement("hr");
-    line.className = "line";
     const deleteExcursion = async () => {
       const excursionToDelete = {
         name: excursion.name,
@@ -297,9 +284,5 @@ resIdButton.addEventListener("click", async () => {
       excursionDeleteButton
     );
     excursionsContainer.append(excursionDiv);
-    excursionsContainer.append(line);
   }
-  excursionDeleteButton.addEventListener("click", () => {
-    deleteExcursion();
-  });
 });
