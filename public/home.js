@@ -5,10 +5,6 @@ const inputsArray = [];
 const searchButton = document.querySelector(".searchButton");
 const checkVacationButton = document.querySelector(".checkVacationButton");
 
-checkVacationButton.addEventListener("click", () => {
-  window.location.assign("/check_vacation");
-});
-
 const getHotelsData = async (city, vacationId) => {
   const formContainer = document.querySelector(".formContainer");
   formContainer.remove();
@@ -74,9 +70,6 @@ const getHotelsData = async (city, vacationId) => {
     hotelAddButton.innerText = "Add";
     hotelAddButton.className = "hotelAddButton";
 
-    const line = document.createElement("hr");
-    line.className = "line";
-
     const addHotelToDB = async () => {
       hotelsContainer.remove();
       const hotelToCreate = {
@@ -118,7 +111,6 @@ const getHotelsData = async (city, vacationId) => {
       hotelPhone,
       hotelAddButton
     );
-    hotelsContainer.append(line);
     hotelsContainer.append(hotelDiv);
   }
   const restaurantsButton = document.createElement("button");
@@ -178,10 +170,6 @@ const getHotelsData = async (city, vacationId) => {
       restaurantAddButton.innerText = "Add";
       restaurantAddButton.className = "restaurantAddButton";
 
-      const line = document.createElement("hr");
-      line.className = "line";
-
-      console.log("this is the img url", restaurant.image_url);
       const addRestaurantToDB = async () => {
         restaurantDiv.remove();
         const restaurantToCreate = {
@@ -228,7 +216,6 @@ const getHotelsData = async (city, vacationId) => {
         restaurantAddButton
       );
 
-      restaurantContainer.append(line);
       restaurantContainer.append(restaurantDiv);
     }
     const excursionsButton = document.createElement("button");
@@ -285,9 +272,6 @@ const getHotelsData = async (city, vacationId) => {
         excursionAddButton.innerText = "Add";
         excursionAddButton.className = "excursionAddButton";
 
-        const line = document.createElement("hr");
-        line.className = "line";
-
         const addExcursionToDB = async () => {
           excursionDiv.remove();
           const excursionToCreate = {
@@ -330,7 +314,6 @@ const getHotelsData = async (city, vacationId) => {
           excursionPhone,
           excursionAddButton
         );
-        excursionsContainer.append(line);
         excursionsContainer.append(excursionDiv);
       }
       const finalPageButton = document.createElement("button");
