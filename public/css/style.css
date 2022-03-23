@@ -1,21 +1,106 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Fredoka", sans-serif;
 }
 
+/* **** HOME PAGE **** */
 .container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.homePage {
   width: 100%;
 }
 
-.picture {
-  width: 100%;
+.thailandImage {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.imageText {
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  background-color: rgba(0, 136, 136, 0.432);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 200px;
+  font-size: 400%;
+  border-radius: 15px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .formContainer {
   display: flex;
+  font-size: 10px;
+  padding: 0px;
   justify-content: space-evenly;
+  border-radius: 10px;
+  padding: 10px;
   background-color: #34d1aa;
+  margin: 10px;
+  height: 50px;
+  align-items: center;
+}
+
+.inputBox {
+  border: none;
+  font-family: "Fredoka", sans-serif;
+  border-radius: 7px;
+  height: 20px;
+  padding: 4px;
+  margin: 7px;
+}
+
+.searchButton {
+  border: none;
+  color: white;
+  background-color: #34d1aa;
+  border-radius: 7px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
+}
+
+.popDestText {
+  color: #34d1aa;
+  margin-left: 10%;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.countryContainer {
+  width: 20.5%;
+}
+
+.countryTitle {
+  color: #34d1aa;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.destImage {
+  width: 100%;
+  border-radius: 9px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.destinationImagesContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 /**************************NAVBAR STYLING*************************** */
 .navbar {
@@ -23,11 +108,17 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #34d1aa;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 7px;
 }
 
 .brand {
-  font-size: 1.5rem;
-  margin: 0.5rem;
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: 420;
+  text-decoration: none;
+  color: #34d1aa;
 }
 
 .links ul {
@@ -42,45 +133,13 @@ body {
 
 .links li a {
   text-decoration: none;
-  color: black;
-  padding: 1rem;
+  color: #34d1aa;
   display: block;
+  padding: 7px;
+  border-radius: 7px;
+  margin-right: 10px;
+  border: 1.5px solid #34d1aa;
 }
-
-.toggle .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-}
-
-@media (max-width: 400px) {
-  .toggle {
-    display: flex;
-  }
-  .links {
-    display: none;
-    width: 100%;
-  }
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-  }
-  .links li {
-    text-align: center;
-  }
-  .links li a {
-    padding: 0.5rem 1rem;
-  }
-  .links.active {
-    display: flex;
-  }
-}
-/**************************NAVBAR STYLING END***********************/
 
 /**************************CLIENT DATA INPUT START******************/
 
@@ -92,17 +151,6 @@ body {
   color: #333;
   text-transform: none;
   margin-top: 1rem;
-}
-
-@media (max-width: 320px) {
-  .body {
-    display: flex;
-    align-items: center;
-  }
-  .inputData {
-    display: flex;
-    align-items: center;
-  }
 }
 
 /*******************************PERSONALALIZED PAGE STARTS BELOW***************************/
@@ -118,30 +166,6 @@ body {
   color: black;
   font-size: 30px;
 }
-
-@media (max-width: 320px) {
-  .welcoming {
-    display: flex;
-    align-items: center;
-  }
-  .inputData {
-    display: flex;
-    align-items: center;
-  }
-  .welcomeParagraph {
-    margin-top: 40px;
-    height: 250px;
-    width: 275px;
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-
-  .cruise {
-    display: none;
-  }
-}
-
-/******************************END PERSONALIZED PAGE**************************************/
 
 /******************************HOTELS BELOW***********************************************/
 .hotels {
@@ -288,91 +312,8 @@ body {
   margin-right: 20px;
 }
 
-@media (max-width: 770px) {
-  .hotelDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .hotelDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .hotelDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .restaurantButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    float: right;
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 320px) {
-  .hotels {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-    margin-top: 50px;
-
-    /* margin-bottom: 200px; */
-  }
-
-  .hotelName {
-    font-size: 10px;
-  }
-  .hotelAddress {
-    font-size: 10px;
-  }
-  .hotelPhone {
-    font-size: 10px;
-  }
-  /* .hotelDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-  /* margin-top: 50px;
-    margin-bottom: 200px; */
-  /* }
-  .hotelDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center; */
-  /* margin-left: 50px; */
-  /* margin-top: 50px;
-    margin-bottom: 200px;
-  } */
-  .restaurantButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* float: right; */
-    /* margin-right: 20px; */
-  }
-}
-
-/******************************HOTELS ABOVE*******************************************/
 /******************************RESTAURANT BELOW**************************************/
+
 .restaurants {
   display: flex;
   flex-direction: column;
@@ -380,10 +321,6 @@ body {
   margin-top: 50px;
 }
 
-/* .hotelsTitle {
-  display: flex;
-  flex-direction: column;
-} */
 .restaurantDiv1 {
   display: grid;
   height: 200px;
@@ -396,9 +333,6 @@ body {
   grid-template-rows: 80px;
   margin-bottom: 50px;
   margin-top: 50px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* justify-items: stretch; */
 }
 .restaurantName {
   grid-area: name;
@@ -524,82 +458,6 @@ body {
   margin-right: 20px;
 }
 
-@media (max-width: 770px) {
-  .restaurantDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .restaurantDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .restaurantDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .excursionsButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 320px) {
-  .restaurant {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .restaurantDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  .restaurantDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .restaurantDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .restaurantName {
-    font-size: 15px;
-  }
-  .restaurantAddress {
-    font-size: 10px;
-  }
-  .restaurantPhone {
-    font-size: 10px;
-  }
-
-  .excursionsButton {
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 130px;
-    height: 35px;
-  }
-}
-/***************************RESTAURANTS ABOVE*************************/
-
 /*********************EXCURSIONS BELOW********************************/
 .excursions {
   display: flex;
@@ -608,10 +466,6 @@ body {
   margin-top: 50px;
 }
 
-/* .hotelsTitle {
-  display: flex;
-  flex-direction: column;
-} */
 .excursionDiv1 {
   display: grid;
   height: 200px;
@@ -624,9 +478,6 @@ body {
   grid-template-rows: 80px;
   margin-bottom: 50px;
   margin-top: 50px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* justify-items: stretch; */
 }
 .excursionName {
   grid-area: name;
@@ -752,108 +603,6 @@ body {
   margin-right: 20px;
 }
 
-@media (max-width: 770px) {
-  .excursionDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .excursionDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .excursionDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-  .finalPageButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    float: right;
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 320px) {
-  /* .excursions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-  /* margin-top: 50px;
-    margin-left: 20px; */
-
-  /* margin-bottom: 200px; */
-  /* }  */
-
-  .excursionDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .excursionDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .excursionDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .excursionName {
-    font-size: 15px;
-  }
-  .excursionAddress {
-    font-size: 10px;
-  }
-  .excursionPhone {
-    font-size: 10px;
-  }
-  /* .hotelDiv2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-  /* margin-top: 50px;
-    margin-bottom: 200px; */
-  /* }
-  .hotelDiv3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center; */
-  /* margin-left: 50px; */
-  /* margin-top: 50px;
-    margin-bottom: 200px;
-  } */
-  .finalPageButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* float: right; */
-    /* margin-right: 20px; */
-  }
-}
-/*********************EXCURSIONS ABOVE********************************/
-
 /*********************HOTEL FINAL PAGE BELOW********************************/
 .hotelDiv {
   display: grid;
@@ -867,9 +616,6 @@ body {
   grid-template-rows: 80px;
   margin-bottom: 50px;
   margin-top: 50px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* justify-items: stretch; */
 }
 
 .hotelTitle {
@@ -916,122 +662,7 @@ body {
   height: 30px;
 }
 
-@media (max-width: 770px) {
-  .hotelContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-
-  .hotelDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    float: right;
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 320px) {
-  .hotelContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-    margin-top: 50px;
-    margin-left: 20px;
-
-    /* margin-bottom: 200px; */
-  }
-
-  .hotelName {
-    font-size: 15px;
-  }
-  .hotelAddress {
-    font-size: 10px;
-  }
-  .hotelPhone {
-    font-size: 10px;
-  }
-
-  .hotelDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* float: right; */
-    /* margin-right: 20px; */
-  }
-}
-
-/*********************HOTEL FINAL PAGE ABOVE********************************/
-
 /*********************RESTAURANT FINAL PAGE BELOW***************************/
-@media (max-width: 770px) {
-  .restaurantContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-
-  .restaurantDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    float: right;
-    margin-right: 20px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .restaurantContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-    margin-top: 50px;
-    margin-left: 20px;
-
-    /* margin-bottom: 200px; */
-  }
-
-  .restaurantDiv1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .restaurantName {
-    font-size: 15px;
-  }
-  .restaurantAddress {
-    font-size: 10px;
-  }
-  .restaurantPhone {
-    font-size: 10px;
-  }
-
-  .restaurantDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* float: right; */
-    /* margin-right: 20px; */
-  }
-}
 
 .restaurantDiv1 {
   display: grid;
@@ -1045,14 +676,8 @@ body {
   grid-template-rows: 80px;
   margin-bottom: 50px;
   margin-top: 50px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* justify-items: stretch; */
 }
 
-/* .restaurantTitle {
-  display: none;
-} */
 .restaurantName {
   grid-area: name;
   font-weight: 500;
@@ -1094,8 +719,6 @@ body {
   height: 30px;
 }
 
-/*********************RESTAURANT FINAL PAGE ABOVE***************************/
-
 /*********************EXCURSIONS FINAL PAGE BELOW***************************/
 .excursionDiv1 {
   display: grid;
@@ -1109,18 +732,12 @@ body {
   grid-template-rows: 80px;
   margin-bottom: 50px;
   margin-top: 50px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* justify-items: stretch; */
 }
 
 .excursionsContainer {
   margin-bottom: 20px;
 }
 
-/* .excursionTitle {
-  display: none;
-} */
 .excursionName {
   grid-area: name;
   font-weight: 500;
@@ -1163,58 +780,10 @@ body {
   height: 30px;
 }
 
-@media (max-width: 770px) {
-  .excursionsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 200px;
-  }
-
-  .excursionDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    float: right;
-    margin-right: 20px;
-  }
+.excursionDeleteButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-
-@media (max-width: 320px) {
-  .excursionsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-left: 50px; */
-    margin-top: 50px;
-    margin-left: 20px;
-
-    /* margin-bottom: 200px; */
-  }
-
-  .excursionName {
-    font-size: 15px;
-  }
-  .excursionAddress {
-    font-size: 10px;
-  }
-  .excursionPhone {
-    font-size: 10px;
-  }
-
-  .excursionDeleteButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* float: right; */
-    /* margin-right: 20px; */
-  }
-}
-
-/*********************EXCURSIONS FINAL PAGE ABOVE***************************/

@@ -8,7 +8,10 @@ const checkVacationButton = document.querySelector(".checkVacationButton");
 const getHotelsData = async (city, vacationId) => {
   const formContainer = document.querySelector(".formContainer");
   formContainer.remove();
-
+  const destinationsContainer = document.querySelector(
+    ".destinationsContainer"
+  );
+  destinationsContainer.remove();
   const welcomeContainer = document.querySelector(".welcomeContainer");
 
   const welcomeParagraph = document.createElement("p");
