@@ -34,7 +34,7 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 - Creates a vacation in the database with a unique reservation ID:
   <img src="images/vacayCreateVacay.png" alt="vacayBuddyScreenshot" width=""/>
 
-### Planning Page:
+#### Displays user vacation information and gives options to choose from:
 
 <img src="images/vacayBuddy3.png" alt="vacayBuddyScreenshot" width="650"/>
 
