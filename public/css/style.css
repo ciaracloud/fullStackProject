@@ -19,6 +19,7 @@ body {
 .thailandImage {
   width: 80%;
   border-radius: 20px;
+  margin-top: 5px;
 }
 
 .imageText {
@@ -51,6 +52,7 @@ body {
   margin: 10px;
   height: 50px;
   align-items: center;
+  margin-top: 15px;
 }
 
 .inputBox {
@@ -101,6 +103,7 @@ body {
   justify-content: space-evenly;
   margin-left: 7%;
   margin-right: 7%;
+  margin-bottom: 30px;
 }
 /**************************NAVBAR STYLING*************************** */
 .navbar {
@@ -155,154 +158,110 @@ body {
 
 /*******************************PERSONALALIZED PAGE STARTS BELOW***************************/
 
-.welcoming .welcomeContainer {
+.welcomeContainer {
   display: flex;
-  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .welcomeParagraph {
-  display: flex;
-  font-weight: 500;
-  color: black;
+  width: 100%;
   font-size: 30px;
 }
 
-/******************************HOTELS BELOW***********************************************/
-.hotels {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  margin-top: 50px;
+.welcomeText {
+  width: 40%;
+  margin: 15px;
+  margin-left: 40px;
+  color: #34d1aa;
 }
 
-.hotelDiv1 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
+.welcomeTitle {
+  font-size: 45px;
+  color: #34d1aa;
+  font-weight: 600;
 }
-.hotelName {
-  grid-area: name;
+
+.paragraph2 {
+  color: #34d1aa;
   font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
 }
 
-.hotelImg {
-  grid-area: img;
+.welcomePhoto {
+  width: 40%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+/******************************HOTELS BELOW***********************************************/
+
+.elementTitle {
+  font-size: 26px;
+  color: #34d1aa;
+  margin-left: 8%;
 }
 
-.hotelRating {
-  grid-area: rating;
-  margin-left: 50px;
+.divContainer {
+  display: flex;
+  justify-content: center;
 }
-.hotelAddress {
-  grid-area: address;
+
+.elementDiv {
+  display: flex;
+  background-color: #34d1aa;
+  padding: 10px;
+  border-radius: 14px;
+  color: white;
+  margin: 10px;
+  flex-wrap: wrap;
+  width: 17%;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-weight: 200;
+  font-size: 10px;
+  width: 100%;
+  height: 12%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.rating {
+  margin: 0px;
+}
+.address {
   font-weight: 100;
   font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
+  font-size: 10px;
 }
-.hotelPhone {
-  grid-area: phone;
+.phone {
   font-weight: 100;
   font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
+  font-size: 10px;
 }
-.hotelPrice {
-  grid-area: price;
-  margin-left: 50px;
+.price {
+  margin: 0px;
+  font-size: 10px;
 }
 
-.hotelAddButton {
-  grid-area: button;
-  margin-left: 50px;
+.addButton {
   width: 50px;
   height: 30px;
-}
-
-.hotelDiv2 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.hotelName {
-  grid-area: name;
-}
-
-.hotelImg {
-  grid-area: img;
-}
-
-.hotelRating {
-  grid-area: rating;
-}
-.hotelAddress {
-  grid-area: address;
-}
-.hotelPhone {
-  grid-area: phone;
-}
-.hotelPrice {
-  grid-area: price;
-}
-
-.hotelAddButton {
-  grid-area: button;
-}
-
-.hotelDiv3 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.hotelName {
-  grid-area: name;
-}
-
-.hotelImg {
-  grid-area: img;
-}
-
-.hotelRating {
-  grid-area: rating;
-}
-.hotelAddress {
-  grid-area: address;
-}
-.hotelPhone {
-  grid-area: phone;
-}
-.hotelPrice {
-  grid-area: price;
-}
-
-.hotelAddButton {
-  grid-area: button;
+  color: #34d1aa;
+  border-radius: 7px;
+  background-color: white;
+  font-family: "Fredoka", sans-serif;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .restaurantButton {
@@ -312,316 +271,9 @@ body {
   margin-right: 20px;
 }
 
-/******************************RESTAURANT BELOW**************************************/
-
-.restaurants {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  margin-top: 50px;
-}
-
-.restaurantDiv1 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-.restaurantName {
-  grid-area: name;
-  font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.restaurantImg {
-  grid-area: img;
-}
-
-.restaurantRating {
-  grid-area: rating;
-  margin-left: 50px;
-}
-.restaurantAddress {
-  grid-area: address;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.restaurantPhone {
-  grid-area: phone;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.restaurantPrice {
-  grid-area: price;
-  margin-left: 50px;
-}
-
-.restaurantAddButton {
-  grid-area: button;
-  margin-left: 50px;
-  width: 50px;
-  height: 30px;
-}
-
-.restaurantDiv2 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.restaurantName {
-  grid-area: name;
-}
-
-.restaurantImg {
-  grid-area: img;
-}
-
-.restaurantRating {
-  grid-area: rating;
-}
-.restaurantAddress {
-  grid-area: address;
-}
-.restaurantPhone {
-  grid-area: phone;
-}
-.restaurantPrice {
-  grid-area: price;
-}
-
-.restaurantAddButton {
-  grid-area: button;
-}
-
-.restaurantDiv3 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.restaurantName {
-  grid-area: name;
-}
-
-.restaurantImg {
-  grid-area: img;
-}
-
-.restaurantRating {
-  grid-area: rating;
-}
-.restaurantAddress {
-  grid-area: address;
-}
-.restaurantPhone {
-  grid-area: phone;
-}
-.restaurantPrice {
-  grid-area: price;
-}
-
-.restaurantAddButton {
-  grid-area: button;
-}
-
-.excursionsButton {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  float: right;
-  margin-right: 20px;
-}
-
-/*********************EXCURSIONS BELOW********************************/
-.excursions {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  margin-top: 50px;
-}
-
-.excursionDiv1 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-.excursionName {
-  grid-area: name;
-  font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.excursionImg {
-  grid-area: img;
-}
-
-.excursionRating {
-  grid-area: rating;
-  margin-left: 50px;
-}
-.excursionAddress {
-  grid-area: address;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.excursionPhone {
-  grid-area: phone;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.excursionPrice {
-  grid-area: price;
-  margin-left: 50px;
-}
-
-.excursionAddButton {
-  grid-area: button;
-  margin-left: 50px;
-  width: 50px;
-  height: 30px;
-}
-
-.excursionDiv2 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.excursionName {
-  grid-area: name;
-}
-
-.excursionImg {
-  grid-area: img;
-}
-
-.excursionRating {
-  grid-area: rating;
-}
-.excursionAddress {
-  grid-area: address;
-}
-.excursionPhone {
-  grid-area: phone;
-}
-.excursionPrice {
-  grid-area: price;
-}
-
-.excursionAddButton {
-  grid-area: button;
-}
-
-.excursionDiv3 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.excursionName {
-  grid-area: name;
-}
-
-.excursionImg {
-  grid-area: img;
-}
-
-.excursionRating {
-  grid-area: rating;
-}
-.excursionAddress {
-  grid-area: address;
-}
-.excursionPhone {
-  grid-area: phone;
-}
-.excursionPrice {
-  grid-area: price;
-}
-
-.excursionAddButton {
-  grid-area: button;
-}
-
-.finalPageButton {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  float: right;
-  margin-right: 20px;
-}
-
 /*********************HOTEL FINAL PAGE BELOW********************************/
-.hotelDiv {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
 
-.hotelTitle {
-  display: none;
-}
-.hotelName {
+/* .hotelName {
   grid-area: name;
   font-weight: 500;
   font-size: 20px;
@@ -653,7 +305,7 @@ body {
 .hotelPrice {
   grid-area: price;
   margin-left: 50px;
-}
+} */
 
 .hotelDeleteButton {
   grid-area: button;
@@ -664,7 +316,7 @@ body {
 
 /*********************RESTAURANT FINAL PAGE BELOW***************************/
 
-.restaurantDiv1 {
+/* .restaurantDiv1 {
   display: grid;
   height: 200px;
   width: 700px;
@@ -710,7 +362,7 @@ body {
 .restaurantPrice {
   grid-area: price;
   margin-left: 50px;
-}
+} */
 
 .restaurantDeleteButton {
   grid-area: button;
@@ -720,7 +372,7 @@ body {
 }
 
 /*********************EXCURSIONS FINAL PAGE BELOW***************************/
-.excursionDiv1 {
+/* .excursionDiv1 {
   display: grid;
   height: 200px;
   width: 700px;
@@ -778,7 +430,7 @@ body {
   margin-left: 50px;
   width: 50px;
   height: 30px;
-}
+} */
 
 .excursionDeleteButton {
   display: flex;
