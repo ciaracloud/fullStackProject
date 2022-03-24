@@ -22,43 +22,43 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 ## Database schema (with dummy data):
 
-<img src="images/databaseDiagram1.png" alt="databaseDiagram" width="550"/>
+<img src="images/databaseDiagram1.png" alt="databaseDiagram" width="400"/>
 
 ## Screenshots:
 
 ### Home Page:
 
-<img src="images/vacayBuddy1.png" alt="vacayBuddyScreenshot" width="500"/>
-<img src="images/vacayBuddy2.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy1.png" alt="vacayBuddyScreenshot" width="650"/>
+<img src="images/vacayBuddy2.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Creates a vacation in the database with a unique reservation ID:
   <img src="images/vacayCreateVacay.png" alt="vacayBuddyScreenshot" width=""/>
 
 ### Planning Page:
 
-<img src="images/vacayBuddy3.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy3.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Gathers hotel, restaurants, and excursions data from Yelp API to display
 
 #### Select a hotel:
 
-<img src="images/vacayBuddy4.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy4.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Creates a hotel in the database with the unique reservation ID:
   <img src="images/vacayCreateHotel.png" alt="vacayBuddyScreenshot" width=""/>
 
 #### Select restaurant(s):
 
-<img src="images/vacayBuddy5.png" alt="vacayBuddyScreenshot" width="500"/>
-<img src="images/vacayBuddy6.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy5.png" alt="vacayBuddyScreenshot" width="650"/>
+<img src="images/vacayBuddy6.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Creates restaurants in the database with the unique reservation ID:
   <img src="images/vacayCreateRests.png" alt="vacayBuddyScreenshot" width=""/>
 
 #### Select excursion(s):
 
-<img src="images/vacayBuddy7.png" alt="vacayBuddyScreenshot" width="500"/>
-<img src="images/vacayBuddy8.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy7.png" alt="vacayBuddyScreenshot" width="650"/>
+<img src="images/vacayBuddy8.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Creates excursions in the database with the unique reservation ID:
   <img src="images/vacayCreateExc.png" alt="vacayBuddyScreenshot" width=""/>
@@ -67,20 +67,20 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 #### Input reservation ID:
 
-<img src="images/vacayBuddy9.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy9.png" alt="vacayBuddyScreenshot" width="650"/>
 
 #### Vacation details displayed:
 
-<img src="images/vacayBuddy10.png" alt="vacayBuddyScreenshot" width="500"/>
-<img src="images/vacayBuddy11.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy10.png" alt="vacayBuddyScreenshot" width="650"/>
+<img src="images/vacayBuddy11.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Uses unique reservation ID to find and display hotel, restaurants, and excursions attached to the vacation in the database:
   <img src="images/vacayDisplay.png" alt="vacayBuddyScreenshot" width=""/>
 
 #### Delete from chosen hotel, restaurants, or excursions:
 
-<img src="images/vacayBuddy12.png" alt="vacayBuddyScreenshot" width="500"/>
-<img src="images/vacayBuddy13.png" alt="vacayBuddyScreenshot" width="500"/>
+<img src="images/vacayBuddy12.png" alt="vacayBuddyScreenshot" width="650"/>
+<img src="images/vacayBuddy13.png" alt="vacayBuddyScreenshot" width="650"/>
 
 - Deletes from the chosen hotel, restaurants, or excursions in the database:
   <img src="images/vacayDelete.png" alt="vacayBuddyScreenshot" width=""/>
