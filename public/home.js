@@ -138,8 +138,9 @@ const getHotelsData = async (city, vacationId) => {
   hotelsContainer.append(hotelDivsContainer);
   const restaurantsButton = document.createElement("button");
   restaurantsButton.innerText = "See restaurants";
-  restaurantsButton.className = "restaurantButton";
+  restaurantsButton.className = "restaurantButton nextButton";
   const restButtonContainer = document.querySelector(".restButtonContainer");
+  restButtonContainer.className = "nextButtonContainer";
   restButtonContainer.append(restaurantsButton);
   const getRestaurantsData = async () => {
     const restaurantObject = {
@@ -246,8 +247,11 @@ const getHotelsData = async (city, vacationId) => {
     restaurantContainer.append(restaurantsDivsContainer);
     const excursionsButton = document.createElement("button");
     excursionsButton.innerText = "See excursions";
-    excursionsButton.className = "excursionsButton";
-    restaurantContainer.append(excursionsButton);
+    excursionsButton.className = "excursionsButton nextButton";
+    const excButtonContainer = document.createElement("div");
+    excButtonContainer.className = "excButtonContainer nextButtonContainer";
+    excButtonContainer.append(excursionsButton);
+    restaurantContainer.append(excButtonContainer);
 
     const getExcursionsData = async () => {
       const excursionObject = {
@@ -299,7 +303,7 @@ const getHotelsData = async (city, vacationId) => {
         excursionPhone.className = "excursionPhone phone";
         const excursionAddButton = document.createElement("button");
         excursionAddButton.innerText = "Add";
-        excursionAddButton.className = "excursionAddButton";
+        excursionAddButton.className = "excursionAddButton addButton";
 
         const addExcursionToDB = async () => {
           excursionDiv.remove();
@@ -347,11 +351,12 @@ const getHotelsData = async (city, vacationId) => {
       }
       excursionsContainer.append(excursionsDivsContainer);
       const finalPageButton = document.createElement("button");
-      finalPageButton.className = "finalPageButton";
+      finalPageButton.className = "finalPageButton nextButton";
       finalPageButton.innerText = "See vacation";
       const finalPageButtonContainer = document.querySelector(
         ".finalPageButtonContainer"
       );
+      finalPageButtonContainer.className = "nextButtonContainer";
       finalPageButton.addEventListener("click", () => {
         window.location.assign("/check_vacation");
       });

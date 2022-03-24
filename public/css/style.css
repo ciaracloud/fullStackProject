@@ -4,7 +4,49 @@ body {
   font-family: "Fredoka", sans-serif;
 }
 
-/* **** HOME PAGE **** */
+/* *** NAVBAR *** */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #34d1aa;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 7px;
+}
+
+.brand {
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: 420;
+  text-decoration: none;
+  color: #34d1aa;
+}
+
+.links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.links li {
+  list-style: none;
+}
+
+.links li a {
+  text-decoration: none;
+  color: #34d1aa;
+  display: block;
+  padding: 7px;
+  border-radius: 7px;
+  margin-right: 10px;
+  border: 1.5px solid #34d1aa;
+  font-size: 19px;
+}
+
+/* *** HOME PAGE *** */
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -62,6 +104,7 @@ body {
   height: 20px;
   padding: 4px;
   margin: 7px;
+  outline: none;
 }
 
 .searchButton {
@@ -71,6 +114,7 @@ body {
   border-radius: 7px;
   font-family: "Fredoka", sans-serif;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .popDestText {
@@ -105,58 +149,8 @@ body {
   margin-right: 7%;
   margin-bottom: 30px;
 }
-/**************************NAVBAR STYLING*************************** */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #34d1aa;
-  width: 100%;
-  margin-bottom: 20px;
-  padding-top: 7px;
-}
 
-.brand {
-  font-size: 30px;
-  margin-left: 20px;
-  font-weight: 420;
-  text-decoration: none;
-  color: #34d1aa;
-}
-
-.links ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.links li {
-  list-style: none;
-}
-
-.links li a {
-  text-decoration: none;
-  color: #34d1aa;
-  display: block;
-  padding: 7px;
-  border-radius: 7px;
-  margin-right: 10px;
-  border: 1.5px solid #34d1aa;
-}
-
-/**************************CLIENT DATA INPUT START******************/
-
-.submitButton {
-  width: 100%;
-  padding: 0.5rem;
-  border: 0.1rem solid rgba (0, 0, 0, 0.1);
-  font-size: 1rem;
-  color: #333;
-  text-transform: none;
-  margin-top: 1rem;
-}
-
-/*******************************PERSONALALIZED PAGE STARTS BELOW***************************/
+/* -- WELCOME CONTENT -- */
 
 .welcomeContainer {
   display: flex;
@@ -191,7 +185,8 @@ body {
   border-radius: 12px;
   object-fit: cover;
 }
-/******************************HOTELS BELOW***********************************************/
+
+/* -- ELEMENTS STYLING -- */
 
 .elementTitle {
   font-size: 26px;
@@ -215,15 +210,17 @@ body {
   width: 17%;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .name {
-  font-weight: 200;
-  font-size: 10px;
+  font-weight: 400;
+  font-size: 17px;
   width: 100%;
-  height: 12%;
   padding: 5px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .img {
@@ -235,21 +232,20 @@ body {
 }
 
 .rating {
-  margin: 0px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .address {
   font-weight: 100;
-  font-style: italic;
-  font-size: 10px;
+  width: 80%;
+  margin-left: 5px;
 }
 .phone {
   font-weight: 100;
-  font-style: italic;
-  font-size: 10px;
 }
 .price {
   margin: 0px;
-  font-size: 10px;
 }
 
 .addButton {
@@ -260,182 +256,166 @@ body {
   background-color: white;
   font-family: "Fredoka", sans-serif;
   border: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 5px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.nextButton {
+  border: 1.5px solid #34d1aa;
+  color: #34d1aa;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 7px;
+  font-family: "Fredoka", sans-serif;
+  padding: 8px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.nextButtonContainer {
+  text-align: center;
+}
+
+/* *** FINAL PAGE *** */
+
+.suitcaseImg {
+  width: 80%;
+  border-radius: 15px;
+}
+
+.finalPageHeader {
+  color: white;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.finalPagePara {
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.resIdInput {
+  border: 1px solid #34d1aa;
+  border-radius: 7px;
+  height: 30px;
+  font-family: "Fredoka", sans-serif;
+  margin-right: 7px;
+  outline: none;
+}
+
+.resIdButton {
+  background-color: #34d1aa;
+  color: white;
+  border: 1.5px solid white;
+  font-family: "Fredoka", sans-serif;
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.finalPageContainer {
+  display: grid;
+  place-items: center;
+}
+
+.finalPageInputContainer {
+  text-align: center;
+  background-color: #34d1aa;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  outline: line;
+}
+
+.finalPageTitle {
+  color: #34d1aa;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.vacationDiv {
+  border: 1.5px solid #34d1aa;
+  border-radius: 10px;
+  color: #34d1aa;
+  padding: 25px;
+  font-size: 15px;
+  font-weight: 400;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vacayHeaderText {
+  font-weight: 500;
+  font-size: 23px;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.vacayParaText {
+  font-weight: 200;
+  margin: 0px;
+  font-size: 20px;
+}
+
+.vacayTextDiv {
+  width: 25%;
+  text-align: center;
+}
+
+.finalPageDiv {
+  border: 1px solid #34d1aa;
+  display: flex;
+  padding: 20px;
+  margin: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #34d1aa;
+  color: white;
+  border-radius: 10px;
+  width: 600px;
+}
+
+.finalPageImg {
+  height: 267px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.finalPageName {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.finalPageDeleteButton {
+  background-color: white;
+  color: #34d1aa;
+  border-radius: 7px;
+  border: none;
+  padding: 10px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.finalPageTextDiv {
+  margin: 10px;
+  font-size: 20px;
+  width: 250px;
   margin-left: 20px;
-  margin-right: 20px;
 }
 
-.restaurantButton {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  float: right;
-  margin-right: 20px;
-}
-
-/*********************HOTEL FINAL PAGE BELOW********************************/
-
-/* .hotelName {
-  grid-area: name;
-  font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.hotelImg {
-  grid-area: img;
-}
-
-.hotelRating {
-  grid-area: rating;
-  margin-left: 50px;
-}
-.hotelAddress {
-  grid-area: address;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.hotelPhoneNumber {
-  grid-area: phone;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.hotelPrice {
-  grid-area: price;
-  margin-left: 50px;
-} */
-
-.hotelDeleteButton {
-  grid-area: button;
-  margin-left: 50px;
-  width: 50px;
-  height: 30px;
-}
-
-/*********************RESTAURANT FINAL PAGE BELOW***************************/
-
-/* .restaurantDiv1 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-
-.restaurantName {
-  grid-area: name;
-  font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.restaurantImg {
-  grid-area: img;
-}
-
-.restaurantRating {
-  grid-area: rating;
-  margin-left: 50px;
-}
-.restaurantAddress {
-  grid-area: address;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.restaurantPhoneNumber {
-  grid-area: phone;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.restaurantPrice {
-  grid-area: price;
-  margin-left: 50px;
-} */
-
-.restaurantDeleteButton {
-  grid-area: button;
-  margin-left: 50px;
-  width: 50px;
-  height: 30px;
-}
-
-/*********************EXCURSIONS FINAL PAGE BELOW***************************/
-/* .excursionDiv1 {
-  display: grid;
-  height: 200px;
-  width: 700px;
-  grid-template-areas:
-    "img img name rating"
-    "img img address price"
-    "img img phone button";
-  grid-template-columns: 220px;
-  grid-template-rows: 80px;
-  margin-bottom: 50px;
-  margin-top: 50px;
+.finalPageRating .finalPageAddress .finalPagePrice .finalPagePhoneNumber {
+  margin: 0px;
 }
 
 .excursionsContainer {
-  margin-bottom: 20px;
-}
-
-.excursionName {
-  grid-area: name;
-  font-weight: 500;
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.excursionImg {
-  grid-area: img;
-}
-
-.excursionRating {
-  grid-area: rating;
-  margin-left: 50px;
-}
-.excursionAddress {
-  grid-area: address;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-  justify-content: center;
-}
-.excursionPhoneNumber {
-  grid-area: phone;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 20px;
-  margin-left: 50px;
-}
-.excursionPrice {
-  grid-area: price;
-  margin-left: 50px;
-}
-
-.excursionDeleteButton {
-  grid-area: button;
-  margin-left: 50px;
-  width: 50px;
-  height: 30px;
-} */
-
-.excursionDeleteButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
