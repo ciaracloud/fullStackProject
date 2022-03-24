@@ -38,7 +38,7 @@ Vacay Buddy is a website that helps users plan their vacation by providing all r
 
 <img src="images/vacayBuddy3.png" alt="vacayBuddyScreenshot" width="650"/>
 
-- Gathers hotel, restaurants, and excursions data from Yelp API to display
+- Gathers hotel, restaurants, and excursions data from Yelp API based on the chosen destination
 
 #### Select a hotel:
 
