@@ -28,7 +28,6 @@ router.get("/check_vacation", (req, res) => {
 // GET DATA ROUTES
 router.post("/get_hotels", async (req, res) => {
   const { yel_api_key, url } = req.body;
-  console.log(req.body);
   let hotelInfo = await fetch(url, {
     method: "get",
     headers: {
@@ -41,7 +40,6 @@ router.post("/get_hotels", async (req, res) => {
 
 router.post("/get_restaurants", async (req, res) => {
   const { yel_api_key, url } = req.body;
-  console.log(req.body);
   let restaurantInfo = await fetch(url, {
     method: "get",
     headers: {
@@ -54,7 +52,6 @@ router.post("/get_restaurants", async (req, res) => {
 
 router.post("/get_excursions", async (req, res) => {
   const { yel_api_key, url } = req.body;
-  console.log(req.body);
   let excursionInfo = await fetch(url, {
     method: "get",
     headers: {
@@ -62,16 +59,13 @@ router.post("/get_excursions", async (req, res) => {
     },
   });
   let excursionJson = await excursionInfo.json();
-  // console.log(restaurantJson?.businesses);
   res.status(200).send(excursionJson?.businesses);
 });
 
 router.post("/get_events", async (req, res) => {
   const { url } = req.body;
-  console.log(req.body);
   let eventInfo = await fetch(url);
   let eventJson = await eventInfo.json();
-  // console.log(restaurantJson?.businesses);
   res.status(200).send(eventJson?.events);
 });
 
@@ -86,7 +80,6 @@ router.post("/create_vacation", async (req, res) => {
     city: city,
   };
   const addVacation = await db.Vacations.create(newVacation);
-  console.log(addVacation.id);
 
   if (addVacation) {
     res.status(200).send(addVacation);
