@@ -9,10 +9,7 @@ app.use(express.json());
 require("dotenv").config();
 const client = require("./elephantsql");
 const { createSecretKey } = require("crypto");
-// const fetch = (...args) =>
-//   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-// template engine connection
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("./public"));
 app.engine("html", es6Renderer);
